@@ -1,0 +1,17 @@
+{
+  "name": "Prosperity Fox",
+  "short_name": "Foxsei",
+  "start_url": "/Koshinow/",
+  "scope": "/Koshinow/",
+  "display": "standalone",
+  "background_color": "#080809",
+  "theme_color": "#080809",
+  "icons": [
+    {
+      "src": "fox-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
