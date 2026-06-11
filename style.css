@@ -669,4 +669,11 @@ p {
     border: none;
     padding: 0.5rem 1rem;
   }
+
+.feature-card .secondary-button {
+  color: var(--washi-ink);
+}
+
+.feature-card .secondary-button:hover {
+  color: #ffffff;
 }
