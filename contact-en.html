@@ -371,16 +371,24 @@
         aria-labelledby="email-modal-title"
       >
         <h2 id="email-modal-title">Contact Foxjin</h2>
-        <p class="email-modal-note">
-          Select your preferred email service. The compose window will open with
-          info@foxjin.com already filled in.
-        </p>
+
+        <p class="email-modal-note">Step 1: Click "Copy Email Address".</p>
+
+        <button
+          type="button"
+          class="button primary-button email-provider-btn"
+          id="copy-email-btn"
+        >
+          Copy Email Address
+        </button>
+
+        <p class="email-modal-note">Step 2: Open your email service.</p>
 
         <a
           href="mailto:info@foxjin.com"
-          class="button primary-button email-provider-btn"
+          class="button secondary-button email-provider-btn"
         >
-          Default Email App
+          Open My Email App
         </a>
 
         <a
@@ -425,13 +433,11 @@
           Yahoo Mail
         </a>
 
-        <button
-          type="button"
-          class="button secondary-button email-provider-btn"
-          id="copy-email-btn"
-        >
-          Copy Email Address
-        </button>
+        <p class="email-modal-note">
+          Step 3: If the address is not already in the "To" field, paste it.
+        </p>
+
+        <p class="email-modal-note">Email Address: info@foxjin.com</p>
 
         <button type="button" id="email-modal-close" class="email-modal-close">
           Close
