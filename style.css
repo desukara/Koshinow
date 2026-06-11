@@ -670,15 +670,3 @@ p {
     padding: 0.5rem 1rem;
   }
 }
-
-.hero-content,
-.hero-actions,
-.feature-card,
-.button {
-  position: relative;
-  z-index: 5;
-}
-
-.button {
-  pointer-events: auto;
-}
