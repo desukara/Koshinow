@@ -429,6 +429,14 @@ p {
   color: var(--washi-ink);
 }
 
+.feature-card .secondary-button {
+  color: var(--washi-ink) !important;
+}
+
+.feature-card .secondary-button:hover {
+  color: #ffffff !important;
+}
+
 .hero-visual {
   display: flex;
   align-items: center;
@@ -669,11 +677,5 @@ p {
     border: none;
     padding: 0.5rem 1rem;
   }
-
-.feature-card .secondary-button {
-  color: var(--washi-ink);
-}
-
-.feature-card .secondary-button:hover {
-  color: #ffffff;
+  }
 }
