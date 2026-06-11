@@ -13,6 +13,53 @@
     <link rel="icon" href="favicon-48x48.png" />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
+
+    <style>
+      .email-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.72);
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .email-modal.active {
+        display: flex;
+      }
+
+      .email-modal-box {
+        width: min(420px, 100%);
+        background: var(--washi);
+        color: var(--text-dark);
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: var(--shadow-dark);
+        display: grid;
+        gap: 1rem;
+      }
+
+      .email-modal-box h2 {
+        margin-bottom: 0.25rem;
+      }
+
+      .email-modal-note {
+        color: #5c4d3b;
+        font-size: 0.95rem;
+      }
+
+      .email-modal-close {
+        border: none;
+        background: transparent;
+        color: var(--text-dark);
+        font-weight: 900;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -79,12 +126,12 @@
             </p>
 
             <div class="hero-actions">
-              <a
-                href="mailto:info@foxjin.com"
-                class="button primary-button"
+              <button
+                type="button"
+                class="button primary-button email-choice-btn"
               >
                 メールを送る
-              </a>
+              </button>
               <a href="tel:07015672156" class="button secondary-button">
                 電話をかける
               </a>
@@ -113,12 +160,12 @@
             <article class="feature-card">
               <h3>メールアドレス</h3>
               <p class="contact-detail">info@foxjin.com</p>
-              <a
-                href="mailto:info@foxjin.com"
-                class="button primary-button"
+              <button
+                type="button"
+                class="button primary-button email-choice-btn"
               >
                 メールを送る
-              </a>
+              </button>
             </article>
           </div>
         </div>
@@ -252,5 +299,121 @@
         </nav>
       </div>
     </footer>
+
+    <div class="email-modal" id="email-modal" aria-hidden="true">
+      <div
+        class="email-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="email-modal-title"
+      >
+        <h2 id="email-modal-title">メールサービスを選択</h2>
+        <p class="email-modal-note">
+          選択したメールサービスの作成画面が開き、宛先に info@foxjin.com
+          が入力されます。
+        </p>
+
+        <a href="mailto:info@foxjin.com" class="button primary-button">
+          通常のメールアプリ
+        </a>
+
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=info@foxjin.com"
+          target="_blank"
+          rel="noopener"
+          class="button secondary-button"
+        >
+          Gmail
+        </a>
+
+        <a
+          href="https://outlook.live.com/mail/0/deeplink/compose?to=info@foxjin.com"
+          target="_blank"
+          rel="noopener"
+          class="button secondary-button"
+        >
+          Outlook
+        </a>
+
+        <a
+          href="https://compose.mail.yahoo.com/?to=info@foxjin.com"
+          target="_blank"
+          rel="noopener"
+          class="button secondary-button"
+        >
+          Yahooメール
+        </a>
+
+        <button
+          type="button"
+          class="button secondary-button"
+          id="copy-email-btn"
+        >
+          メールアドレスをコピー
+        </button>
+
+        <button type="button" id="email-modal-close" class="email-modal-close">
+          閉じる
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const emailChoiceBtns = document.querySelectorAll(".email-choice-btn");
+        const emailModal = document.getElementById("email-modal");
+        const emailModalClose = document.getElementById("email-modal-close");
+        const copyEmailBtn = document.getElementById("copy-email-btn");
+
+        function openEmailModal() {
+          if (!emailModal) return;
+          emailModal.classList.add("active");
+          emailModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeEmailModal() {
+          if (!emailModal) return;
+          emailModal.classList.remove("active");
+          emailModal.setAttribute("aria-hidden", "true");
+
+          if (copyEmailBtn) {
+            copyEmailBtn.textContent = "メールアドレスをコピー";
+          }
+        }
+
+        emailChoiceBtns.forEach((button) => {
+          button.addEventListener("click", openEmailModal);
+        });
+
+        if (emailModalClose) {
+          emailModalClose.addEventListener("click", closeEmailModal);
+        }
+
+        if (emailModal) {
+          emailModal.addEventListener("click", (event) => {
+            if (event.target === emailModal) {
+              closeEmailModal();
+            }
+          });
+        }
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeEmailModal();
+          }
+        });
+
+        if (copyEmailBtn) {
+          copyEmailBtn.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText("info@foxjin.com");
+              copyEmailBtn.textContent = "コピーしました";
+            } catch {
+              copyEmailBtn.textContent = "info@foxjin.com";
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
