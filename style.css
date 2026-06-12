@@ -357,7 +357,7 @@ h1 {
 }
 
 h1::first-letter {
-  color: var(--gold-bright);
+  color: var(--vermillion);
 }
 
 h2 {
