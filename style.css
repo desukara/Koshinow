@@ -421,9 +421,15 @@ p {
 }
 
 .secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 15px 30px;
+  border-radius: 999px;
   border: 2px solid var(--vermillion);
-  color: #ffffff;
-  background: var(--sumi-panel);
+  background: #17130f !important;
+  color: #ffffff !important;
 }
 
 .secondary-button:hover {
