@@ -438,8 +438,6 @@ p {
   box-shadow: 0 0 24px rgba(179, 49, 43, 0.45);
 }
 
-[data-theme="light"] .secondary-button {
-  color: var(--washi-ink);
 }
 
 .button:focus-visible,
@@ -449,10 +447,6 @@ p {
 .menu-toggle:focus-visible {
   outline: 3px solid var(--gold-bright);
   outline-offset: 4px;
-}
-
-.feature-card .secondary-button {
-  color: var(--washi-ink) !important;
 }
 
 .feature-card .secondary-button:hover {
