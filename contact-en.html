@@ -92,6 +92,10 @@
         flex-shrink: 0;
       }
 
+      .contact-card {
+        min-height: auto;
+      }
+
       .email-modal-close {
         border: none;
         background: transparent;
@@ -215,7 +219,7 @@
           </p>
 
           <div class="card-grid">
-            <article class="feature-card">
+            <article class="feature-card contact-card">
               <h3>Email Address</h3>
 
               <p class="contact-detail">info@foxjin.com</p>
@@ -244,7 +248,7 @@
           </p>
 
           <div class="card-grid">
-            <article class="feature-card">
+            <article class="feature-card contact-card">
               <h3>Phone Number</h3>
 
               <p class="contact-detail">070 1567-2156</p>
@@ -254,7 +258,6 @@
               </a>
             </article>
           </div>
-          
         </div>
       </section>
 
@@ -382,20 +385,13 @@
 
         <p class="email-modal-note">Step 1: Click "Copy Email Address".</p>
 
-        <button
-          type="button"
-          class="email-provider-btn"
-          id="copy-email-btn"
-        >
+        <button type="button" class="email-provider-btn" id="copy-email-btn">
           Copy Email Address
         </button>
 
         <p class="email-modal-note">Step 2: Open your email service.</p>
 
-        <a
-          href="mailto:info@foxjin.com"
-          class="email-provider-btn"
-        >
+        <a href="mailto:info@foxjin.com" class="email-provider-btn">
           Open My Email App
         </a>
 
