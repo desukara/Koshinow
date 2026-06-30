@@ -11,7 +11,7 @@
     />
 
     <link rel="icon" href="favicon-48x48.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=3" />
     <script src="main.js" defer></script>
 
     <style>
@@ -59,24 +59,37 @@
         justify-content: center;
         gap: 12px;
         min-height: 52px;
-        color: var(--text-dark) !important;
+        padding: 15px 30px;
+        border-radius: 999px;
         background: #fffaf0;
+        color: #17130f;
         border: 1px solid rgba(23, 19, 15, 0.18);
+        text-align: center;
+        text-decoration: none;
+        font-weight: 900;
+        line-height: 1.15;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(23, 19, 15, 0.08);
+        transition: background 0.2s ease, transform 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .email-provider-btn:hover {
-        color: var(--text-dark) !important;
+        background: #f3ead6;
+        color: #17130f;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(23, 19, 15, 0.12);
+      }
+
+      .email-provider-btn:focus-visible {
+        outline: 3px solid var(--gold-bright);
+        outline-offset: 4px;
       }
 
       .provider-icon {
         width: 22px;
         height: 22px;
         flex-shrink: 0;
-      }
-
-      .email-modal .primary-button,
-      .email-modal .secondary-button {
-        color: var(--text-dark) !important;
       }
 
       .email-modal-close {
@@ -236,7 +249,7 @@
 
               <p class="contact-detail">070 1567-2156</p>
 
-              <a href="tel:777777777777" class="button secondary-button">
+              <a href="tel:07015672156" class="button secondary-button">
                 Call Now
               </a>
             </article>
@@ -371,7 +384,7 @@
 
         <button
           type="button"
-          class="button primary-button email-provider-btn"
+          class="email-provider-btn"
           id="copy-email-btn"
         >
           Copy Email Address
@@ -381,7 +394,7 @@
 
         <a
           href="mailto:info@foxjin.com"
-          class="button secondary-button email-provider-btn"
+          class="email-provider-btn"
         >
           Open My Email App
         </a>
@@ -390,7 +403,7 @@
           href="https://mail.google.com/mail/?view=cm&fs=1&to=info@foxjin.com"
           target="_blank"
           rel="noopener"
-          class="button secondary-button email-provider-btn"
+          class="email-provider-btn"
         >
           <img
             src="https://www.google.com/favicon.ico"
@@ -404,7 +417,7 @@
           href="https://outlook.live.com/mail/0/deeplink/compose?to=info@foxjin.com"
           target="_blank"
           rel="noopener"
-          class="button secondary-button email-provider-btn"
+          class="email-provider-btn"
         >
           <img
             src="https://www.google.com/s2/favicons?domain=outlook.com&sz=64"
@@ -418,7 +431,7 @@
           href="https://compose.mail.yahoo.com/?to=info@foxjin.com"
           target="_blank"
           rel="noopener"
-          class="button secondary-button email-provider-btn"
+          class="email-provider-btn"
         >
           <img
             src="https://mail.yahoo.com/favicon.ico"
