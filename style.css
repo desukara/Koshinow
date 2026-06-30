@@ -428,16 +428,14 @@ p {
   padding: 15px 30px;
   border-radius: 999px;
   border: 2px solid var(--vermillion);
-  background: #17130f !important;
-  color: #ffffff !important;
+  background: #17130f;
+  color: #ffffff;
 }
 
 .secondary-button:hover {
   background: var(--vermillion);
   color: #fff;
   box-shadow: 0 0 24px rgba(179, 49, 43, 0.45);
-}
-
 }
 
 .button:focus-visible,
