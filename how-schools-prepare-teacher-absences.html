@@ -3,206 +3,365 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>
-      スタッフ不足にスクールはどう対応すべきか | Foxjinスクールメディア
+      講師の欠勤に備えてスクールができる準備 | Foxjin スクールメディア
     </title>
+
     <meta
       name="description"
-      content="スタッフ不足は授業、保護者対応、スクール運営全体に影響します。英語スクールが事前に準備できる対応策を解説します。"
+      content="講師の欠勤は、クラス、保護者、スタッフ、そしてスクールへの信頼に影響します。日本の英会話スクールが事前にできる準備を解説します。"
     />
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="stylesheet" href="media.css" />
     <link rel="stylesheet" href="stories.css" />
+
+
+    <style>
+      .story-hero-img{width:100%;height:auto;display:block;object-fit:cover;border-radius:16px}
+      .related-thumb{overflow:hidden}
+      .related-thumb-img{width:100%;height:180px;display:block;object-fit:cover}
+    </style>
     <script src="media.js" defer></script>
     <script src="stories.js" defer></script>
   </head>
+
   <body class="story-page">
-    <div class="story-progress"><div class="story-progress-bar"></div></div>
+    <div class="story-progress" aria-hidden="true">
+      <div class="story-progress-bar"></div>
+    </div>
+
     <header class="site-header">
       <div class="section-inner header-inner">
-        <a href="index.html" class="site-logo"
-          ><img src="fox-logo-512.png" class="logo-img" /><span
-            class="logo-text"
-            >Foxjin / 狐ジン</span
-          ></a
-        >
+        <a href="index.html" class="site-logo" aria-label="ホームに戻る">
+          <img src="fox-logo-512.png" alt="Foxjin / 狐ジン" class="logo-img" />
+          <span class="logo-text">Foxjin / 狐ジン</span>
+        </a>
+
         <div class="header-actions">
-          <nav class="language-toggle">
+          <nav class="language-toggle" aria-label="言語切り替え">
             <a
-              href="how-schools-handle-staff-shortages.html"
-              class="lang-link active"
-              >日本語</a
+              href="how-schools-prepare-teacher-absences.html"
+              class="lang-link active" aria-current="page"
             >
+              日本語
+            </a>
             <a
-              href="how-schools-handle-staff-shortages-en.html"
-              class="lang-link"
-              >EN</a
-            >
+              href="how-schools-prepare-teacher-absences-en.html"
+              class="lang-link">
+              EN
+            </a>
           </nav>
+
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="メニューを開く"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <nav class="site-nav">
+
+        <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
           <a href="index.html" class="nav-link">ホーム</a>
           <a href="profile.html" class="nav-link">プロフィール</a>
           <a href="articles.html" class="nav-link active">スクールメディア</a>
-          <a href="questions.html" class="nav-link">よくある質問</a>
+          <a href="questions.html" class="nav-link">よくあるご質問</a>
           <a href="contact.html" class="nav-link">お問い合わせ</a>
         </nav>
       </div>
     </header>
+
     <main>
-      <nav class="story-breadcrumbs section-inner">
+      <nav class="story-breadcrumbs section-inner" aria-label="パンくずリスト">
         <ol>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">スクールメディア</a></li>
-          <li>スクール運営</li>
+          <li>講師欠勤</li>
         </ol>
       </nav>
+
       <article>
         <header class="story-hero">
           <div class="section-inner">
-            <span class="story-category">スクール運営</span>
+            <span class="story-category">講師欠勤</span>
+
             <h1 class="story-title">
-              スタッフ不足にスクールはどう対応すべきか
+              How Schools Can Prepare for 講師欠勤
             </h1>
+
             <p class="story-dek">
-              スタッフ不足は、授業、保護者対応、スケジュール、現場スタッフに大きな負担を与えます。うまく対応できるスクールほど、問題が起きる前に準備をしています。
+              講師の欠勤は、事前の準備があるほど対応しやすくなります。明確な仕組み、整理された教材、そしてバックアップ体制が、クラス、保護者、スタッフを守ります。
             </p>
+
             <div class="story-meta">
-              <span>Foxjinスクールメディア</span><span>2026年6月</span
-              ><span>約7分</span>
+              <span>Foxjin スクールメディア</span>
+              <span>2026年6月</span>
+              <span>読了時間：約7分</span>
             </div>
+
             <figure class="story-hero-image">
-              <div class="story-hero-placeholder"></div>
+              <img
+                src="how-schools-prepare-teacher-absences.png"
+                alt="講師欠勤への備え"
+                class="story-hero-img"
+              />
               <figcaption class="story-caption">
-                スタッフ不足は、準備とバックアップ体制があるほど対応しやすくなります。
+                事前準備があるほど、講師が突然授業できなくなった時の選択肢が増えます。
               </figcaption>
             </figure>
           </div>
         </header>
+
         <div class="section-inner story-shell">
           <div class="story-main">
             <div class="story-content">
               <section class="story-lede">
                 <p>
-                  スタッフ不足は、一つの部署だけの問題ではありません。授業スケジュール、保護者対応、現場スタッフの負担、そして生徒の学習環境にも影響します。
+                  講師の欠勤は、明確な計画がない場合に大きな負担になります。すべての問題を予測することではなく、スタッフが最初に何をすべきか分かる体制を整えることが重要です。
                 </p>
               </section>
+
               <div class="story-tools">
-                <button class="story-tool-button">シェア</button
-                ><button class="story-tool-button">リンクをコピー</button>
+                <button class="story-tool-button" type="button" data-share-page>
+                  共有
+                </button>
+                <button class="story-tool-button" type="button" data-copy-link>
+                  リンクをコピー
+                </button>
               </div>
-              <h2 id="shortage-impact">なぜ人員不足はすぐ広がるのか</h2>
+
+              <h2 id="before-emergency">問題が起こる前に準備する</h2>
+
               <p>
-                一人の講師やスタッフが不在になるだけで、スクール全体の流れを変更しなければならないことがあります。
+                講師欠勤への準備は、問題が起こる前に行うのが最善です。当日の朝まで準備を待つスクールは、選択肢が少なく、より大きなプレッシャーを受けがちです。
               </p>
+
               <p>
-                授業の代講、教室の調整、保護者連絡、スケジュール変更など、多くの対応が同時に発生します。
+                シンプルな準備体制でも、スタッフの迅速な対応、明確な連絡、そしてクラスの継続につながります。
               </p>
+
               <blockquote class="story-pullquote">
-                スタッフ不足への対応は、「次に何をするか」が決まっているほど落ち着いて進められます。<cite
-                  >Foxjinスクールメディア</cite
-                >
+                準備があることで、突然の欠勤はパニックではなく運営上の対応になります。
+                <cite>Foxjin スクールメディア</cite>
               </blockquote>
-              <h2 id="first-response">最初の対応が重要</h2>
-              <p>最初の数時間の判断が、その日の流れを決めることがあります。</p>
+
+              <h2 id="organize-materials">教材を整理しておく</h2>
+
               <p>
-                どの授業を優先するか、誰が保護者対応を行うか、どんな代替手段があるかを事前に決めておくことが重要です。
+                教材は、他の講師やスタッフがすぐに理解できる状態にしておく必要があります。 Class notes, student levels,
+                textbook pages, activity instructions, and classroom routines
+                should be stored where the team can access them.
               </p>
+
+              <p>
+                When materials are organized, temporary support becomes much
+                more effective. The substitute teacher can focus on the students
+                instead of trying to decode the class from scratch.
+              </p>
+
               <div class="story-callout">
-                <h3>最初の一歩を決めておく</h3>
+                <h3>引き継ぎしやすいクラスをつくる</h3>
                 <p>
-                  完璧なマニュアルよりも、最初に何をするかが分かっていることが現場の安心につながります。
+                  A class becomes easier to protect when another qualified
+                  teacher can understand the lesson plan, student needs, and
+                  classroom rhythm quickly.
                 </p>
               </div>
-              <h2 id="protect-lessons">授業の継続性を守る</h2>
-              <p>最も重要なのは、できるだけ授業を止めないことです。</p>
+
+              <h2 id="communication-plan">連絡体制を整える</h2>
+
               <p>
-                整理された教材、共有されたクラス情報、代講しやすいレッスンプラン、バックアップ講師の存在が役立ちます。
+                スタッフは、誰が保護者に連絡するのか、どのような内容を伝えるのか、いつ連絡するのかを把握しておく必要があります。 Clear communication
+                helps prevent confusion and protects trust.
               </p>
-              <h2 id="support-staff">残ったスタッフを支える</h2>
+
               <p>
-                人員不足になると、現場のスタッフが追加の負担を抱えることになります。
+                Even when a schedule change is unavoidable, parents usually
+                respond better when the school communicates calmly and
+                professionally.
               </p>
+
+              <h2 id="backup-support">バックアップ体制を把握しておく</h2>
+
               <p>
-                明確な手順があれば、誰が何をするかが分かり、現場のストレスを減らすことができます。
+                講師が突然授業できなくなった場合に備え、スクールは事前に利用可能な選択肢を把握しておくべきです。 This may include internal staff,
+                trusted substitute teachers, temporary support networks, or
+                emergency classroom coverage.
               </p>
-              <h2 id="long-term-planning">次に備えるための振り返り</h2>
+
               <p>
-                問題が落ち着いた後には、どこで困ったのかを振り返ることが重要です。
+                The key is to avoid searching for options only after the problem
+                has already become urgent.
               </p>
-              <p>その経験は、次のトラブルへの準備につながります。</p>
+
+              <h2 id="review-after">欠勤対応後に振り返る</h2>
+
+              <p>
+                After an absence is handled, schools should review what worked
+                and what caused stress. Were materials easy to find? Was parent
+                communication clear? Did staff know the next step? Was coverage
+                possible?
+              </p>
+
+              <p>
+                Each absence can help the school improve its system for the next
+                time.
+              </p>
+
               <section class="story-takeaways">
-                <h2>ポイント</h2>
+                <h2>重要ポイント</h2>
                 <ul>
-                  <li>スタッフ不足はスクール全体に影響する。</li>
-                  <li>最初の対応が一日の流れを決める。</li>
-                  <li>授業の継続は保護者の信頼を守る。</li>
-                  <li>スタッフには明確なサポートが必要。</li>
-                  <li>経験を次の準備に活かすことが重要。</li>
+                  <li>Teacher absence plans work best when prepared early.</li>
+                  <li>Organized lesson materials make coverage easier.</li>
+                  <li>Clear parent communication protects trust.</li>
+                  <li>
+                    Backup options should be identified before emergencies.
+                  </li>
+                  <li>Every absence can improve future preparation.</li>
                 </ul>
               </section>
+
               <h2 id="foxjin-role">Foxjinができること</h2>
+
               <p>
-                Foxjinは、スタッフ不足や急な欠勤が発生した際に、授業の継続をサポートします。
+                Foxjin helps schools maintain classroom continuity when teacher
+                absences create pressure. With direct English teacher support,
+                schools gain time and flexibility while they protect lessons and
+                handle the situation responsibly.
               </p>
+
               <p>
-                スクールが落ち着いて次の判断を行える時間を確保することを目指しています。
+                The goal is not to replace a school’s internal planning. The
+                goal is to support that planning when unexpected staffing
+                problems appear.
               </p>
+
               <section class="story-cta">
-                <h2>スタッフ不足でお困りですか？</h2>
+                <h2>講師欠勤への備えを整えませんか？</h2>
                 <p>
-                  Foxjinは、人員不足や急な欠勤時の授業継続をサポートします。
+                  Foxjin helps English schools maintain classroom continuity
+                  during teacher absences, staffing gaps, and urgent schedule
+                  problems.
                 </p>
-                <a href="contact.html" class="story-cta-button"
-                  >Foxjinに相談する</a
-                >
+                <a href="contact.html" class="story-cta-button">
+                  お問い合わせ Foxjin
+                </a>
               </section>
+
               <section class="related-stories">
-                <div class="related-stories-header"><h2>関連記事</h2></div>
+                <div class="related-stories-header">
+                  <h2>関連する記事</h2>
+                </div>
+
                 <div class="related-grid">
-                  <a
-                    href="emergency-classroom-coverage.html"
-                    class="related-card"
-                    ><div class="related-thumb"></div>
+                  <a href="teacher-called-in-sick-en.html" class="related-card">
+                    <div class="related-thumb">
+                      <img src="filler.png" alt="Teacher absence emergency" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
-                      <span class="related-category">緊急対応</span>
-                      <h3>英語スクールのための緊急クラスカバー</h3>
-                    </div></a
-                  >
-                  <a href="backup-teachers-eikaiwa.html" class="related-card"
-                    ><div class="related-thumb"></div>
-                    <div class="related-body">
-                      <span class="related-category">英会話スクール運営</span>
+                      <span class="related-category">緊急講師対応</span>
                       <h3>
-                        英会話スクールにバックアップ講師の仕組みが必要な理由
+                        What Happens When Your English Teacher Calls in Sick?
                       </h3>
-                    </div></a
+                    </div>
+                  </a>
+
+                  <a
+                    href="emergency-classroom-coverage-en.html"
+                    class="related-card"
                   >
-                  <a href="eikaiwa-school-operations.html" class="related-card"
-                    ><div class="related-thumb"></div>
+                    <div class="related-thumb">
+                      <img src="emergency-classroom-coverage.png" alt="Emergency classroom coverage" class="related-thumb-img" />
+                    </div>
+                    <div class="related-body">
+                      <span class="related-category">緊急講師対応</span>
+                      <h3>Emergency Classroom Coverage for English Schools</h3>
+                    </div>
+                  </a>
+
+                  <a
+                    href="how-schools-handle-staff-shortages-en.html"
+                    class="related-card"
+                  >
+                    <div class="related-thumb">
+                      <img src="how-schools-handle-staff-shortages.png" alt="Staff shortages" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
                       <span class="related-category">スクール運営</span>
-                      <h3>英会話スクール運営で「継続性」が大切な理由</h3>
-                    </div></a
-                  >
+                      <h3>How Schools Can Handle Staff Shortages</h3>
+                    </div>
+                  </a>
                 </div>
               </section>
             </div>
           </div>
-          <aside class="story-sidebar">
+
+          <aside class="story-sidebar" aria-label="Article sidebar">
             <section class="story-sidebar-box story-toc">
               <h2>この記事の内容</h2>
               <ol class="story-toc-list">
-                <li><a href="#shortage-impact">人員不足の影響</a></li>
-                <li><a href="#first-response">最初の対応</a></li>
-                <li><a href="#protect-lessons">授業の継続</a></li>
-                <li><a href="#support-staff">スタッフ支援</a></li>
-                <li><a href="#long-term-planning">振り返りと準備</a></li>
-                <li><a href="#foxjin-role">Foxjinのサポート</a></li>
+                <li><a href="#before-emergency">Before the emergency</a></li>
+                <li><a href="#organize-materials">Organize materials</a></li>
+                <li><a href="#communication-plan">Communication plan</a></li>
+                <li><a href="#backup-support">Backup support</a></li>
+                <li><a href="#review-after">Review after absences</a></li>
+                <li><a href="#foxjin-role">Foxjinができること</a></li>
               </ol>
+            </section>
+
+            <section class="story-sidebar-box">
+              <h2>トピック</h2>
+              <div class="story-tag-list">
+                <a href="articles.html" class="story-tag"
+                  >講師欠勤</a
+                >
+                <a href="articles.html" class="story-tag"
+                  >緊急講師対応</a
+                >
+                <a href="articles.html" class="story-tag"
+                  >スクール運営</a
+                >
+              </div>
+            </section>
+
+            <section class="story-sidebar-box">
+              <h2>Foxjinについて</h2>
+              <p>
+                Foxjinは、日本国内の英会話スクール向けに、一時的な講師不足や人員交代時のクラス継続サポートを提供しています。
+              </p>
             </section>
           </aside>
         </div>
       </article>
     </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <p>
+          &copy; <span id="year"></span> Foxjin / 狐ジン. All rights reserved.
+        </p>
+
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="index.html">ホーム</a>
+          <a href="profile.html">プロフィール</a>
+          <a href="articles.html">スクールメディア</a>
+          <a href="questions.html">よくあるご質問</a>
+          <a href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
