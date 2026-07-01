@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="media.css" />
     <link rel="stylesheet" href="stories.css" />
 
+
+    <style>
+      .story-hero-img{width:100%;height:auto;display:block;object-fit:cover;border-radius:16px}
+      .related-thumb{overflow:hidden}
+      .related-thumb-img{width:100%;height:180px;display:block;object-fit:cover}
+    </style>
     <script src="media.js" defer></script>
     <script src="stories.js" defer></script>
   </head>
@@ -108,7 +114,11 @@
             </div>
 
             <figure class="story-hero-image">
-              <div class="story-hero-placeholder" aria-hidden="true"></div>
+              <img
+                src="backup-teachers-eikaiwa.png"
+                alt="Backup teacher planning for eikaiwa"
+                class="story-hero-img"
+              />
               <figcaption class="story-caption">
                 Classroom continuity is one of the most important forms of trust
                 an eikaiwa can provide.
@@ -234,7 +244,9 @@
 
                 <div class="related-grid">
                   <a href="teacher-called-in-sick-en.html" class="related-card">
-                    <div class="related-thumb" aria-hidden="true"></div>
+                    <div class="related-thumb">
+                      <img src="filler.png" alt="Teacher called in sick" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
                       <span class="related-category"> Emergency Coverage </span>
                       <h3>
@@ -247,7 +259,9 @@
                     href="english-teacher-turnover-cost-en.html"
                     class="related-card"
                   >
-                    <div class="related-thumb" aria-hidden="true"></div>
+                    <div class="related-thumb">
+                      <img src="english-teacher-turnover-cost.png" alt="Teacher turnover" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
                       <span class="related-category"> Teacher Staffing </span>
                       <h3>The Real Cost of English Teacher Turnover</h3>
@@ -258,7 +272,9 @@
                     href="how-schools-prepare-teacher-absences-en.html"
                     class="related-card"
                   >
-                    <div class="related-thumb" aria-hidden="true"></div>
+                    <div class="related-thumb">
+                      <img src="how-schools-prepare-teacher-absences.png" alt="Teacher absences" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
                       <span class="related-category"> Teacher Absences </span>
                       <h3>How Schools Can Prepare for Teacher Absences</h3>
