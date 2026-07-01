@@ -3,207 +3,365 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>
-      代講の英語講師が必要になったとき、スクールがすべきこと |
-      Foxjinスクールメディア
+      代講の英語講師が必要な時、スクールは何をすべきか | Foxjin スクールメディア
     </title>
+
     <meta
       name="description"
-      content="代講の英語講師が必要になったとき、授業、保護者、スタッフへの影響を最小限にするためにスクールが準備できることを解説します。"
+      content="代講講師が必要になった時、事前準備が重要です。日本の英会話スクールがクラス、保護者、スタッフを守る方法を解説します。"
     />
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="stylesheet" href="media.css" />
     <link rel="stylesheet" href="stories.css" />
+
+
+    <style>
+      .story-hero-img{width:100%;height:auto;display:block;object-fit:cover;border-radius:16px}
+      .related-thumb{overflow:hidden}
+      .related-thumb-img{width:100%;height:180px;display:block;object-fit:cover}
+    </style>
     <script src="media.js" defer></script>
     <script src="stories.js" defer></script>
   </head>
+
   <body class="story-page">
-    <div class="story-progress"><div class="story-progress-bar"></div></div>
+    <div class="story-progress" aria-hidden="true">
+      <div class="story-progress-bar"></div>
+    </div>
+
     <header class="site-header">
       <div class="section-inner header-inner">
-        <a href="index.html" class="site-logo"
-          ><img src="fox-logo-512.png" class="logo-img" /><span
-            class="logo-text"
-            >Foxjin / 狐ジン</span
-          ></a
-        >
+        <a href="index.html" class="site-logo" aria-label="ホームに戻る">
+          <img src="fox-logo-512.png" alt="Foxjin / 狐ジン" class="logo-img" />
+          <span class="logo-text">Foxjin / 狐ジン</span>
+        </a>
+
         <div class="header-actions">
-          <nav class="language-toggle">
+          <nav class="language-toggle" aria-label="言語切り替え">
             <a href="need-substitute-teacher.html" class="lang-link active"
-              >日本語</a
-            >
-            <a href="need-substitute-teacher-en.html" class="lang-link">EN</a>
+              aria-current="page">
+              日本語
+            </a>
+            <a
+              href="need-substitute-teacher-en.html"
+              class="lang-link">
+              EN
+            </a>
           </nav>
+
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="メニューを開く"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <nav class="site-nav">
+
+        <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
           <a href="index.html" class="nav-link">ホーム</a>
           <a href="profile.html" class="nav-link">プロフィール</a>
           <a href="articles.html" class="nav-link active">スクールメディア</a>
-          <a href="questions.html" class="nav-link">よくある質問</a>
+          <a href="questions.html" class="nav-link">よくあるご質問</a>
           <a href="contact.html" class="nav-link">お問い合わせ</a>
         </nav>
       </div>
     </header>
+
     <main>
-      <nav class="story-breadcrumbs section-inner">
+      <nav class="story-breadcrumbs section-inner" aria-label="パンくずリスト">
         <ol>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">スクールメディア</a></li>
-          <li>代講・代替講師</li>
+          <li>代講講師</li>
         </ol>
       </nav>
+
       <article>
         <header class="story-hero">
           <div class="section-inner">
-            <span class="story-category">代講・代替講師</span>
+            <span class="story-category">代講講師</span>
+
             <h1 class="story-title">
-              代講の英語講師が必要になったとき、スクールがすべきこと
+              代講の英語講師が必要な時、スクールは何をすべきか
             </h1>
+
             <p class="story-dek">
-              講師が急に授業に入れなくなったときに必要なのは、慌てることではなく、落ち着いた対応です。適切な代講サポートは、授業、保護者、スタッフを守ります。
+              講師が突然授業できなくなった時、スクールには落ち着いた対応計画が必要です。適切な代講サポートは、クラスを守り、スタッフの負担を軽減し、保護者の信頼維持につながります。
             </p>
+
             <div class="story-meta">
-              <span>Foxjinスクールメディア</span><span>2026年6月</span
-              ><span>約7分</span>
+              <span>Foxjin スクールメディア</span>
+              <span>2026年6月</span>
+              <span>読了時間：約7分</span>
             </div>
+
             <figure class="story-hero-image">
-              <div class="story-hero-placeholder"></div>
+              <img
+                src="need-substitute-teacher.png"
+                alt="代講英語講師サポート"
+                class="story-hero-img"
+              />
               <figcaption class="story-caption">
-                代講対応は、問題解決だけでなく、スクールの信頼を守ることにもつながります。
+                代講サポートは、問題が緊急化する前に準備しているスクールほど効果的です。
               </figcaption>
             </figure>
           </div>
         </header>
+
         <div class="section-inner story-shell">
           <div class="story-main">
             <div class="story-content">
               <section class="story-lede">
                 <p>
-                  多くのスクールでは、代講講師が必要になってから探し始めます。しかし、その時点ではすでにスタッフへの負担が増え、保護者への説明も必要になっています。
+                  多くのスクールは、問題が緊急化してから代講講師を探し始めます。その時には、スタッフはプレッシャーの中にあり、保護者への連絡も必要となり、授業開始までの時間も迫っています。
                 </p>
               </section>
+
               <div class="story-tools">
-                <button class="story-tool-button">シェア</button
-                ><button class="story-tool-button">リンクをコピー</button>
+                <button class="story-tool-button" type="button" data-share-page>
+                  共有
+                </button>
+                <button class="story-tool-button" type="button" data-copy-link>
+                  リンクをコピー
+                </button>
               </div>
-              <h2 id="first-question">最初に考えるべきこと</h2>
+
+              <h2 id="first-question">最初に考えるべきことは「誰か」だけではない</h2>
+
               <p>
-                講師が休んだとき、最初の質問は「誰が授業をするか」だけではありません。「どうすればスクール全体を安定して運営できるか」を考える必要があります。
+                講師が欠勤した時、最初の質問は「誰が授業を担当できるか」に見えます。しかし、本当に重要なのは「どうすればスクール全体を安定して運営できるか」です。
               </p>
+
               <p>
-                代講は、一つの授業を埋めるだけでなく、スクール全体の流れを守るための手段です。
+                代講対応は、一つの授業を埋めるためだけではなく、スクール全体の運営を支えるものであるべきです。
               </p>
+
               <blockquote class="story-pullquote">
-                代講講師は単なる代役ではありません。スクールの継続性を支える仕組みの一部です。<cite
-                  >Foxjinスクールメディア</cite
-                >
+                代講講師は単なる代役ではありません。スクールの継続性を守る計画の一部です。
+                <cite>Foxjin スクールメディア</cite>
               </blockquote>
-              <h2 id="what-schools-need">スクールが代講に求めるもの</h2>
+
+              <h2 id="what-schools-need">
+                スクールが代講講師に求めること
+              </h2>
+
               <p>
-                必要なのは、英語が話せる人だけではありません。授業の目的を理解し、スタッフと連携し、生徒の学習環境を守れる講師です。
+                スクールが必要としているのは、単に英語を話せる人ではありません。授業の目的を素早く理解し、スタッフと連携し、生徒の学習体験を守れる講師です。
               </p>
+
               <p>
-                そのため、授業内容やクラス情報が整理されているほど、代講は成功しやすくなります。
+                This is why preparation matters. The better the school documents
+                class routines and lesson materials, the easier it becomes for a
+                substitute teacher to support the class effectively.
               </p>
+
               <div class="story-callout">
-                <h3>授業だけでなく信頼も守る</h3>
+                <h3>クラスを守り、信頼を守る</h3>
                 <p>
-                  代講は、保護者の安心感、生徒の学習リズム、スタッフの負担軽減にもつながります。
+                  Substitute teaching is about more than attendance. It helps
+                  protect parent trust, student rhythm, and staff confidence
+                  during an unexpected disruption.
                 </p>
               </div>
-              <h2 id="reduce-pressure">スタッフの負担を減らす</h2>
+
+              <h2 id="reduce-pressure">スタッフの負担を軽減する</h2>
+
               <p>
-                代講の選択肢がなければ、現場スタッフは授業調整、保護者対応、スケジュール変更を同時に抱えることになります。
+                代講の選択肢がなければ、スタッフはその場で対応を考えなければなりません。 They
+                may call parents, rearrange lessons, combine classes, adjust
+                schedules, or explain cancellations while handling the rest of
+                the school day.
               </p>
-              <p>明確な代講体制があることで、現場は落ち着いて対応できます。</p>
-              <h2 id="prepare-materials">事前準備が重要</h2>
+
               <p>
-                授業計画、教材、生徒情報、クラスの流れを整理しておくことで、代講講師はすぐに授業に入ることができます。
+                A reliable substitute plan gives staff a clearer path forward.
+                Instead of reacting in panic, they can follow a process.
               </p>
+
+              <h2 id="prepare-materials">教材を事前に準備する</h2>
+
               <p>
-                完璧なマニュアルは必要ありません。授業が理解できることが重要です。
+                授業計画、生徒情報、クラスの進行方法、教材情報、緊急時の指示を一か所に整理しておくことで、代講対応は大きく改善します。
               </p>
-              <h2 id="backup-network">バックアップ体制の価値</h2>
+
               <p>
-                代講が必要になる頻度は高くなくても、必要になった時はすぐです。
+                The goal is not to create a perfect script. The goal is to make
+                the class understandable enough that a qualified teacher can
+                step in and keep learning moving.
               </p>
+
+              <h2 id="backup-network">バックアップネットワークが重要な理由</h2>
+
               <p>
-                事前にバックアップ体制があることで、休講という最悪の選択を避けやすくなります。
+                Schools may not need a substitute every week, but when they do,
+                the need is often immediate. A backup support network gives the
+                school more options before stress turns into cancellation.
               </p>
+
+              <p>
+                Having an option already in mind can save valuable time during
+                the most difficult part of the day.
+              </p>
+
               <section class="story-takeaways">
-                <h2>ポイント</h2>
+                <h2>重要ポイント</h2>
                 <ul>
-                  <li>代講は授業以外も守る。</li>
-                  <li>慌てない仕組み作りが重要。</li>
-                  <li>教材共有は代講を成功させる。</li>
-                  <li>スタッフの負担軽減につながる。</li>
-                  <li>バックアップ体制は判断の時間を作る。</li>
+                  <li>Substitute support protects more than one class.</li>
+                  <li>Schools need calm systems, not last-minute panic.</li>
+                  <li>Prepared materials make substitute coverage stronger.</li>
+                  <li>Staff benefit from having a clear backup process.</li>
+                  <li>
+                    A backup network helps schools avoid rushed decisions.
+                  </li>
                 </ul>
               </section>
+
               <h2 id="foxjin-role">Foxjinができること</h2>
+
               <p>
-                Foxjinは、代講の英語講師が必要になった際に、スクールが授業を継続できるようサポートします。
+                Foxjin helps schools maintain classroom continuity when they
+                need substitute English teacher support. The goal is to keep
+                lessons moving while the school handles the situation calmly and
+                professionally.
               </p>
+
               <p>
-                急な欠勤、人員不足、移行期間中でも、スクールが落ち着いて運営できる環境を支えます。
+                For schools facing sudden absences, staffing gaps, or temporary
+                transitions, Foxjin provides support that protects the school
+                day and gives staff room to breathe.
               </p>
+
               <section class="story-cta">
                 <h2>代講の英語講師が必要ですか？</h2>
                 <p>
-                  Foxjinは、講師の欠勤や人員不足時の授業継続をサポートします。
+                  Foxjin helps English schools in Japan maintain classroom
+                  continuity during teacher absences, staffing gaps, and urgent
+                  schedule problems.
                 </p>
-                <a href="contact.html" class="story-cta-button"
-                  >Foxjinに相談する</a
-                >
+                <a href="contact.html" class="story-cta-button">
+                  お問い合わせ Foxjin
+                </a>
               </section>
+
               <section class="related-stories">
-                <div class="related-stories-header"><h2>関連記事</h2></div>
+                <div class="related-stories-header">
+                  <h2>関連する記事</h2>
+                </div>
+
                 <div class="related-grid">
                   <a
-                    href="how-schools-prepare-teacher-absences.html"
+                    href="how-schools-prepare-teacher-absences-en.html"
                     class="related-card"
-                    ><div class="related-thumb"></div>
-                    <div class="related-body">
-                      <span class="related-category">講師の欠勤対策</span>
-                      <h3>講師の急な欠勤に備えてスクールができること</h3>
-                    </div></a
                   >
+                    <div class="related-thumb">
+                      <img src="how-schools-prepare-teacher-absences.png" alt="Teacher absences" class="related-thumb-img" />
+                    </div>
+                    <div class="related-body">
+                      <span class="related-category">講師欠勤</span>
+                      <h3>How Schools Can Prepare for 講師欠勤</h3>
+                    </div>
+                  </a>
+
                   <a
-                    href="emergency-classroom-coverage.html"
+                    href="emergency-classroom-coverage-en.html"
                     class="related-card"
-                    ><div class="related-thumb"></div>
-                    <div class="related-body">
-                      <span class="related-category">緊急対応</span>
-                      <h3>英語スクールのための緊急クラスカバー</h3>
-                    </div></a
                   >
-                  <a href="backup-teachers-eikaiwa.html" class="related-card"
-                    ><div class="related-thumb"></div>
+                    <div class="related-thumb">
+                      <img src="emergency-classroom-coverage.png" alt="Emergency coverage" class="related-thumb-img" />
+                    </div>
+                    <div class="related-body">
+                      <span class="related-category">緊急講師対応</span>
+                      <h3>Emergency Classroom Coverage for English Schools</h3>
+                    </div>
+                  </a>
+
+                  <a
+                    href="backup-teachers-eikaiwa-en.html"
+                    class="related-card"
+                  >
+                    <div class="related-thumb">
+                      <img src="backup-teachers-eikaiwa.png" alt="Backup teacher plan" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
                       <span class="related-category">英会話スクール運営</span>
                       <h3>
-                        英会話スクールにバックアップ講師の仕組みが必要な理由
+                        Why Every Eikaiwa Should Have a Backup Teacher Plan
                       </h3>
-                    </div></a
-                  >
+                    </div>
+                  </a>
                 </div>
               </section>
             </div>
           </div>
-          <aside class="story-sidebar">
+
+          <aside class="story-sidebar" aria-label="Article sidebar">
             <section class="story-sidebar-box story-toc">
               <h2>この記事の内容</h2>
               <ol class="story-toc-list">
-                <li><a href="#first-question">最初の対応</a></li>
-                <li><a href="#what-schools-need">代講に必要なこと</a></li>
-                <li><a href="#reduce-pressure">スタッフ支援</a></li>
-                <li><a href="#prepare-materials">事前準備</a></li>
-                <li><a href="#backup-network">バックアップ体制</a></li>
-                <li><a href="#foxjin-role">Foxjinのサポート</a></li>
+                <li><a href="#first-question">The first question</a></li>
+                <li><a href="#what-schools-need">What schools need</a></li>
+                <li><a href="#reduce-pressure">Reduce staff pressure</a></li>
+                <li><a href="#prepare-materials">Prepare materials</a></li>
+                <li><a href="#backup-network">Backup network</a></li>
+                <li><a href="#foxjin-role">Foxjinができること</a></li>
               </ol>
+            </section>
+
+            <section class="story-sidebar-box">
+              <h2>トピック</h2>
+              <div class="story-tag-list">
+                <a href="articles.html" class="story-tag"
+                  >代講講師</a
+                >
+                <a href="articles.html" class="story-tag"
+                  >講師欠勤</a
+                >
+                <a href="articles.html" class="story-tag"
+                  >緊急講師対応</a
+                >
+              </div>
+            </section>
+
+            <section class="story-sidebar-box">
+              <h2>Foxjinについて</h2>
+              <p>
+                Foxjinは、日本国内の英会話スクール向けに、一時的な講師不足や人員交代時のクラス継続サポートを提供しています。
+              </p>
             </section>
           </aside>
         </div>
       </article>
     </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <p>
+          &copy; <span id="year"></span> Foxjin / 狐ジン. All rights reserved.
+        </p>
+
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="index.html">ホーム</a>
+          <a href="profile.html">プロフィール</a>
+          <a href="articles.html">スクールメディア</a>
+          <a href="questions.html">よくあるご質問</a>
+          <a href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
