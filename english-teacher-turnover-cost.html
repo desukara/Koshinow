@@ -3,211 +3,338 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>
-      英語講師の離職がスクールに与える本当のコスト | Foxjinスクールメディア
+      英語講師の離職がスクールにもたらす本当のコスト | Foxjin スクールメディア
     </title>
+
     <meta
       name="description"
-      content="英語講師の離職は採用費だけの問題ではありません。生徒、保護者、スタッフ、そしてスクールへの信頼にどのような影響を与えるのかを解説します。"
+      content="英語講師の離職は、採用費用や時間以上の影響をスクールにもたらします。保護者、スタッフ、生徒、そしてスクールへの信頼にどのような影響を与えるのかを解説します。"
     />
+
     <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="stylesheet" href="media.css" />
     <link rel="stylesheet" href="stories.css" />
+
+
+    <style>
+      .story-hero-img{width:100%;height:auto;display:block;object-fit:cover;border-radius:16px}
+      .related-thumb{overflow:hidden}
+      .related-thumb-img{width:100%;height:180px;display:block;object-fit:cover}
+    </style>
     <script src="media.js" defer></script>
     <script src="stories.js" defer></script>
   </head>
+
   <body class="story-page">
-    <div class="story-progress"><div class="story-progress-bar"></div></div>
+    <div class="story-progress" aria-hidden="true">
+      <div class="story-progress-bar"></div>
+    </div>
+
     <header class="site-header">
       <div class="section-inner header-inner">
-        <a href="index.html" class="site-logo"
-          ><img src="fox-logo-512.png" class="logo-img" /><span
-            class="logo-text"
-            >Foxjin / 狐ジン</span
-          ></a
-        >
+        <a href="index.html" class="site-logo" aria-label="ホームに戻る">
+          <img src="fox-logo-512.png" alt="Foxjin / 狐ジン" class="logo-img" />
+          <span class="logo-text">Foxjin / 狐ジン</span>
+        </a>
+
         <div class="header-actions">
-          <nav class="language-toggle">
+          <nav class="language-toggle" aria-label="言語切り替え">
+            <a href="english-teacher-turnover-cost.html" class="lang-link active" aria-current="page">
+              日本語
+            </a>
             <a
-              href="english-teacher-turnover-cost.html"
-              class="lang-link active"
-              >日本語</a
-            >
-            <a href="english-teacher-turnover-cost-en.html" class="lang-link"
-              >EN</a
-            >
+              href="english-teacher-turnover-cost-en.html"
+              class="lang-link">
+              EN
+            </a>
           </nav>
+
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="メニューを開く"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <nav class="site-nav">
+
+        <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
           <a href="index.html" class="nav-link">ホーム</a>
           <a href="profile.html" class="nav-link">プロフィール</a>
           <a href="articles.html" class="nav-link active">スクールメディア</a>
-          <a href="questions.html" class="nav-link">よくある質問</a>
+          <a href="questions.html" class="nav-link">よくあるご質問</a>
           <a href="contact.html" class="nav-link">お問い合わせ</a>
         </nav>
       </div>
     </header>
+
     <main>
-      <nav class="story-breadcrumbs section-inner">
+      <nav class="story-breadcrumbs section-inner" aria-label="パンくずリスト">
         <ol>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="articles.html">スクールメディア</a></li>
-          <li>講師採用・人材</li>
+          <li>講師採用・人員体制</li>
         </ol>
       </nav>
+
       <article>
         <header class="story-hero">
           <div class="section-inner">
-            <span class="story-category">講師採用・人材</span>
+            <span class="story-category">講師採用・人員体制</span>
+
             <h1 class="story-title">
-              英語講師の離職がスクールに与える本当のコスト
+              英語講師の離職がスクールにもたらす本当のコスト
             </h1>
+
             <p class="story-dek">
-              英語講師が退職したときのコストは、採用費だけではありません。生徒、保護者、スタッフの負担、そしてスクールが積み重ねてきた信頼にも影響します。
+              英語講師が離職した時、そのコストは採用活動だけでは終わりません。離職は、生徒、保護者、スタッフの士気、授業の質、そしてスクールが築いてきた信頼に影響します。
             </p>
+
             <div class="story-meta">
-              <span>Foxjinスクールメディア</span><span>2026年6月</span
-              ><span>約7分</span>
+              <span>Foxjin スクールメディア</span>
+              <span>2026年6月</span>
+              <span>読了時間：約7分</span>
             </div>
+
             <figure class="story-hero-image">
-              <div class="story-hero-placeholder"></div>
+              <img
+                src="english-teacher-turnover-cost.png"
+                alt="英語講師の離職"
+                class="story-hero-img"
+              />
               <figcaption class="story-caption">
-                講師の離職による負担は、新しい講師が来る前から始まっています。
+                講師の離職は、新しい講師が教室に入る前から運営上の負担を生み出します。
               </figcaption>
             </figure>
           </div>
         </header>
+
         <div class="section-inner story-shell">
           <div class="story-main">
             <div class="story-content">
               <section class="story-lede">
                 <p>
-                  外から見ると、講師の離職は採用の問題に見えるかもしれません。しかし現場では、授業の継続、保護者の信頼、スタッフの負担が同時に発生する運営上の問題でもあります。
+                  講師の離職は、外から見ると採用の問題に見えるかもしれません。しかし現場では、クラスの継続性、保護者の信頼、スタッフの負担が同時に発生する問題です。
                 </p>
               </section>
+
               <div class="story-tools">
-                <button class="story-tool-button">シェア</button
-                ><button class="story-tool-button">リンクをコピー</button>
+                <button class="story-tool-button" type="button" data-share-page>
+                  共有
+                </button>
+                <button class="story-tool-button" type="button" data-copy-link>
+                  リンクをコピー
+                </button>
               </div>
-              <h2 id="beyond-hiring">離職のコストは採用費だけではない</h2>
+
+              <h2 id="beyond-hiring">離職コストは採用費用だけではない</h2>
+
               <p>
-                求人広告、面接、研修、体験レッスンなど、目に見えるコストは確かにあります。しかし、本当に大きな負担はその後に現れます。
+                多くのスクールは、求人広告、面接、研修期間、体験授業、管理者の時間など、目に見えるコストから離職を考えます。しかし、それは全体の一部にすぎません。
               </p>
+
               <p>
-                授業の流れが変わり、保護者から質問が増え、残ったスタッフが追加の業務を抱えることになります。
+                本当のコストは、クラスの流れが崩れ、保護者から質問が増え、後任を探す間にスタッフが追加の負担を抱える時に現れます。
               </p>
+
               <blockquote class="story-pullquote">
-                最も大きな離職コストは、継続性が失われることです。<cite
-                  >Foxjinスクールメディア</cite
-                >
+                離職で最も大きなコストは、継続性の喪失であることが少なくありません。
+                <cite>Foxjin スクールメディア</cite>
               </blockquote>
+
               <h2 id="student-rhythm">生徒は学習のリズムを失う</h2>
+
               <p>
-                生徒は日々の積み重ねによって学びます。講師の教え方、クラスの流れ、期待されることを理解しながら安心感を築いています。
+                生徒は日々の積み重ねの中で自信を育てます。講師の教え方、期待値、授業の進め方に慣れることで学習が安定します。その関係が突然変わると、クラスは再び適応する時間が必要になります。
               </p>
+
               <p>
-                講師が急に変わると、その関係性は一度リセットされます。新しい講師が優秀であっても、移行には時間が必要です。
+                優秀な新しい講師でも成功できますが、その移行には慎重な対応が必要です。継続性がなければ、生徒は不安を感じ、授業の勢いが失われる可能性があります。
               </p>
+
               <div class="story-callout">
-                <h3>継続性が学びを守る</h3>
+                <h3>継続性は学習を守る</h3>
                 <p>
-                  スムーズな引き継ぎは、生徒が変化に振り回されることなく学習を続けるために重要です。
+                  スムーズな移行は、生徒が繰り返し変化に適応するのではなく、学習に集中し続ける助けになります。
                 </p>
               </div>
+
               <h2 id="parent-confidence">保護者は不安定さにすぐ気付く</h2>
+
               <p>
-                保護者は人の入れ替わり自体を問題視しているわけではありません。問題は、その変化をスクールがどう管理しているかです。
+                保護者は人事異動が起こること自体は理解しています。しかし、スクールがどのように対応するかを注意深く見ています。対応が急ぎすぎたり、不透明だったり、何度も繰り返されたりすると、信頼は弱まります。
               </p>
+
               <p>
-                説明不足や混乱が続けば、スクールへの信頼は少しずつ失われていきます。
+                明確な連絡と安定した授業運営は、スクールが準備され、責任を持ち、生徒を大切にしていることを示します。
               </p>
-              <h2 id="staff-pressure">残ったスタッフの負担</h2>
+
+              <h2 id="staff-pressure">スタッフは見えない負担を抱える</h2>
+
               <p>
-                離職後の負担は、現場に残った人たちが引き受けることになります。時間割調整、採用、保護者対応、教材準備、引き継ぎなどが一気に増えます。
+                離職は、残ったスタッフに追加の業務をもたらします。管理者はスケジュール変更、面接、保護者対応、教材準備、後任指導、緊急対応などを担うことになります。
               </p>
+
               <p>
-                十分なサポートがなければ、離職は組織全体のストレス問題になります。
+                受付スタッフも保護者対応の最前線になります。十分なサポートがなければ、離職はチーム全体のストレス問題へと発展します。
               </p>
-              <h2 id="bridge-support">つなぎのサポートが重要な理由</h2>
+
+              <h2 id="bridge-support">なぜつなぎのサポートが重要なのか</h2>
+
               <p>
-                スクールに必要なのは、必ずしもすぐに正社員を採用することではありません。まず必要なのは、授業を継続するための時間です。
+                スクールが常に必要としているのは、すぐに正社員講師を採用することではありません。長期的な判断を行う間、クラスを継続するための一時的なサポートが必要な場合があります。
               </p>
+
               <p>
-                一時的なサポートがあることで、焦って採用するのではなく、落ち着いて判断できるようになります。
+                つなぎのサポートはプレッシャーを軽減します。オーナーや管理者が焦って採用するのではなく、適切な判断を行う時間を確保できます。
               </p>
+
               <section class="story-takeaways">
-                <h2>ポイント</h2>
+                <h2>重要ポイント</h2>
                 <ul>
-                  <li>講師の離職コストは採用費だけではない。</li>
-                  <li>生徒は学習のリズムを失うことがある。</li>
-                  <li>保護者は不安定さに敏感である。</li>
-                  <li>残ったスタッフの負担は大きい。</li>
-                  <li>一時的なサポートは適切な判断時間を作る。</li>
+                  <li>講師の離職コストは採用費用だけではありません。</li>
+                  <li>急な交代は生徒の学習リズムに影響します。</li>
+                  <li>保護者は不安定さにすぐ気付く.</li>
+                  <li>残ったスタッフが見えない負担を抱えます。</li>
+                  <li>一時的なサポートは、慎重な採用判断の時間を生み出します。</li>
                 </ul>
               </section>
+
               <h2 id="foxjin-role">Foxjinができること</h2>
+
               <p>
-                Foxjinは、講師の退職や人員不足が発生した際に、授業の継続性を守るためのサポートを提供しています。
+                Foxjinは、講師の離職、人員不足、急なスケジュール変更時にも、スクールがクラスの継続性を維持できるようサポートします。
               </p>
+
               <p>
-                保護者の信頼を守りながら、スクールが次の一歩を落ち着いて決められる環境を作ります。
+                一時的な英語講師サポートにより、スクールは混乱を減らし、保護者の信頼を守りながら、次の判断を進めることができます。
               </p>
+
               <section class="story-cta">
                 <h2>講師の離職対応でお困りですか？</h2>
                 <p>
-                  Foxjinは、講師交代や採用期間中の授業継続をサポートします。
+                  Foxjinは、人員交代や長期的な採用判断を進める間も、英会話スクールのクラス継続をサポートします。
                 </p>
-                <a href="contact.html" class="story-cta-button"
-                  >Foxjinに相談する</a
-                >
+                <a href="contact.html" class="story-cta-button">
+                  お問い合わせ Foxjin
+                </a>
               </section>
+
               <section class="related-stories">
-                <div class="related-stories-header"><h2>関連記事</h2></div>
+                <div class="related-stories-header">
+                  <h2>関連する記事</h2>
+                </div>
+
                 <div class="related-grid">
-                  <a href="backup-teachers-eikaiwa.html" class="related-card"
-                    ><div class="related-thumb"></div>
+                  <a
+                    href="backup-teachers-eikaiwa.html"
+                    class="related-card"
+                  >
+                    <div class="related-thumb">
+                      <img src="backup-teachers-eikaiwa.png" alt="Backup teacher plan" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
                       <span class="related-category">英会話スクール運営</span>
                       <h3>
-                        英会話スクールにバックアップ講師の仕組みが必要な理由
+                        なぜすべての英会話スクールに講師バックアップ体制が必要なのか
                       </h3>
-                    </div></a
-                  >
+                    </div>
+                  </a>
+
                   <a
                     href="emergency-classroom-coverage.html"
                     class="related-card"
-                    ><div class="related-thumb"></div>
-                    <div class="related-body">
-                      <span class="related-category">緊急対応</span>
-                      <h3>英語スクールのための緊急クラスカバー</h3>
-                    </div></a
                   >
-                  <a href="eikaiwa-school-operations.html" class="related-card"
-                    ><div class="related-thumb"></div>
+                    <div class="related-thumb">
+                      <img src="emergency-classroom-coverage.png" alt="Emergency coverage" class="related-thumb-img" />
+                    </div>
+                    <div class="related-body">
+                      <span class="related-category">緊急講師対応</span>
+                      <h3>英会話スクールのための緊急クラスカバー</h3>
+                    </div>
+                  </a>
+
+                  <a
+                    href="eikaiwa-school-operations.html"
+                    class="related-card"
+                  >
+                    <div class="related-thumb">
+                      <img src="eikaiwa-school-operations.png" alt="Eikaiwa operations" class="related-thumb-img" />
+                    </div>
                     <div class="related-body">
                       <span class="related-category">スクール運営</span>
-                      <h3>英会話スクール運営で「継続性」が大切な理由</h3>
-                    </div></a
-                  >
+                      <h3>英会話スクール運営で「継続性」が重要な理由</h3>
+                    </div>
+                  </a>
                 </div>
               </section>
             </div>
           </div>
-          <aside class="story-sidebar">
+
+          <aside class="story-sidebar" aria-label="記事サイドバー">
             <section class="story-sidebar-box story-toc">
               <h2>この記事の内容</h2>
               <ol class="story-toc-list">
-                <li><a href="#beyond-hiring">採用費以上のコスト</a></li>
-                <li><a href="#student-rhythm">生徒への影響</a></li>
+                <li><a href="#beyond-hiring">採用費用を超えるコスト</a></li>
+                <li><a href="#student-rhythm">学習リズム</a></li>
                 <li><a href="#parent-confidence">保護者の信頼</a></li>
                 <li><a href="#staff-pressure">スタッフの負担</a></li>
-                <li><a href="#bridge-support">つなぎの支援</a></li>
-                <li><a href="#foxjin-role">Foxjinのサポート</a></li>
+                <li><a href="#bridge-support">つなぎのサポート</a></li>
+                <li><a href="#foxjin-role">Foxjinができること</a></li>
               </ol>
+            </section>
+
+            <section class="story-sidebar-box">
+              <h2>トピック</h2>
+              <div class="story-tag-list">
+                <a href="articles.html" class="story-tag"
+                  >講師採用・人員体制</a
+                >
+                <a href="articles.html" class="story-tag">離職</a>
+                <a href="articles.html" class="story-tag"
+                  >スクール運営</a
+                >
+              </div>
+            </section>
+
+            <section class="story-sidebar-box">
+              <h2>Foxjinについて</h2>
+              <p>
+                Foxjinは、日本国内の英会話スクール向けに、一時的な講師不足や人員交代時のクラス継続サポートを提供しています。
+              </p>
             </section>
           </aside>
         </div>
       </article>
     </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <p>
+          &copy; <span id="year"></span> Foxjin / 狐ジン. All rights reserved.
+        </p>
+
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="index.html">ホーム</a>
+          <a href="profile.html">プロフィール</a>
+          <a href="articles.html">スクールメディア</a>
+          <a href="questions.html">よくあるご質問</a>
+          <a href="contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
