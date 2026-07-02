@@ -765,3 +765,15 @@ p {
     transition-duration: 0.001ms !important;
   }
 }
+
+.site-footer {
+  background: var(--sumi-panel);
+}
+
+[data-theme="light"] .site-footer {
+  background: var(--washi);
+}
+
+.footer-inner p {
+  margin-bottom: 0;
+}
