@@ -13,6 +13,136 @@
     <link rel="icon" href="favicon-48x48.png" />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
+
+    <style>
+      .kitsune-line,
+      .fox-whisper {
+        color: #17130f;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .kitsune-line {
+        margin: 0.35rem 0 1rem;
+      }
+
+      .fox-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 1.25rem 0 0.25rem;
+        opacity: 0.9;
+      }
+
+      .fox-divider span {
+        display: inline-grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(122, 63, 0, 0.45);
+        border-radius: 999px;
+        color: #7a3f00;
+        background: rgba(255, 250, 240, 0.9);
+        font-weight: 900;
+        box-shadow: 0 0 24px rgba(122, 63, 0, 0.16);
+      }
+
+      .question-scroll {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .question-card {
+        border-radius: 22px;
+        overflow: hidden;
+        border: 1px solid rgba(122, 63, 0, 0.2);
+        background: rgba(255, 250, 240, 0.72);
+        box-shadow: 0 18px 42px rgba(122, 63, 0, 0.1);
+      }
+
+      .question-card summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 1.15rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-weight: 900;
+        color: #17130f;
+      }
+
+      .question-card summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .question-card summary::after {
+        content: "狐";
+        display: inline-grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+        border-radius: 999px;
+        color: #7a3f00;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid rgba(122, 63, 0, 0.22);
+        transition: transform 0.2s ease;
+      }
+
+      .question-card[open] summary::after {
+        transform: rotate(12deg);
+      }
+
+      .question-card p {
+        padding: 0 1.25rem 1.2rem;
+        margin: 0;
+        color: #2b2118;
+        line-height: 1.75;
+      }
+
+      .question-intro {
+        max-width: 760px;
+      }
+
+      html[data-theme="dark"] .kitsune-line {
+        color: var(--gold-bright);
+        text-shadow: 0 0 18px rgba(214, 172, 86, 0.28);
+      }
+
+      html[data-theme="dark"] .fox-whisper {
+        color: #17130f;
+      }
+
+      html[data-theme="dark"] .fox-divider span {
+        color: var(--gold-bright);
+        background: rgba(23, 19, 15, 0.42);
+        border-color: rgba(214, 172, 86, 0.45);
+        box-shadow: 0 0 28px rgba(214, 172, 86, 0.18);
+      }
+
+      html[data-theme="dark"] .question-card {
+        border-color: rgba(214, 172, 86, 0.24);
+        background: rgba(255, 255, 255, 0.045);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+      }
+
+      html[data-theme="dark"] .question-card summary {
+        color: var(--text-light);
+      }
+
+      html[data-theme="dark"] .question-card summary::after {
+        color: var(--gold-bright);
+        background: rgba(23, 19, 15, 0.5);
+        border-color: rgba(214, 172, 86, 0.34);
+      }
+
+      html[data-theme="dark"] .question-card p {
+        color: var(--text-light);
+      }
+    </style>
   </head>
 
   <body>
@@ -79,6 +209,10 @@
           <div class="hero-content">
             <p class="eyebrow">Questions</p>
 
+            <p class="kitsune-line">
+              Answers reveal the path before the problem grows.
+            </p>
+
             <h1>Teaching support when your school needs coverage.</h1>
 
             <p class="hero-text">
@@ -101,128 +235,147 @@
 
           <div class="hero-visual" aria-hidden="true">
             <div class="visual-card">
-              <span>問</span>
+              <span>狐</span>
             </div>
           </div>
         </div>
       </section>
 
+      <div class="fox-divider" aria-hidden="true"><span>問</span></div>
+
       <section class="content-section">
         <div class="section-inner">
-          <div class="card-grid">
-            <article class="feature-card">
-              <h3>Can you provide substitute teaching?</h3>
+          <p class="eyebrow">Foxjin Answers</p>
+
+          <h2>Open the question you need.</h2>
+
+          <p class="question-intro">
+            Some schools contact Foxjin during an urgent staffing problem.
+            Others reach out before anything goes wrong. Either way, the goal is
+            the same: keep the classroom steady while the school finds the right
+            path forward.
+          </p>
+
+          <div class="question-scroll">
+            <details class="question-card" open>
+              <summary>Can you provide substitute teaching?</summary>
               <p>
                 Yes. Foxjin / 狐ジン may be available to help schools maintain
                 lesson continuity when a teacher is absent, unavailable, ill,
                 resigns suddenly, or when unexpected schedule changes create a
                 staffing gap.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>Can you help during a hiring period?</h3>
+            <details class="question-card">
+              <summary>Can you help during a hiring period?</summary>
               <p>
                 Yes. Temporary teaching support may be available while your
                 school interviews, evaluates, selects, and onboards a new
                 long-term teacher.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>Can you accept same-day requests?</h3>
+            <details class="question-card">
+              <summary>Can you accept same-day requests?</summary>
               <p>
                 Same-day requests may occasionally be possible, but cannot be
                 guaranteed. Availability depends on existing teaching
                 commitments, travel time, location, and class schedule.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>Can you provide next-day support?</h3>
+            <details class="question-card">
+              <summary>Can you provide next-day support?</summary>
               <p>
                 Next-day support is often easier to arrange than same-day
                 coverage. Schools are encouraged to contact Foxjin / 狐ジン as
                 early as possible when a staffing issue is expected.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>Why should schools contact you in advance?</h3>
+            <details class="question-card">
+              <summary>Why should schools contact you in advance?</summary>
               <p>
                 Many schools reach out before an emergency happens so they
                 already have a teaching support contact available. Establishing
                 contact early can make it easier to respond when urgent coverage
                 is needed.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>What types of schools do you support?</h3>
+            <details class="question-card">
+              <summary>What types of schools do you support?</summary>
               <p>
                 Support may be available for eikaiwa schools, children's English
                 programs, adult conversation classes, business English training,
                 and other English education settings.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>What areas do you serve?</h3>
+            <details class="question-card">
+              <summary>What areas do you serve?</summary>
               <p>
                 Support is primarily available throughout Tokyo. Depending on
                 scheduling, travel time, and location, Chiba, Saitama, and
                 Kanagawa may also be possible.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>Can you teach from our existing curriculum?</h3>
+            <details class="question-card">
+              <summary>Can you teach from our existing curriculum?</summary>
               <p>
                 Yes. Lessons can usually be taught using your school's existing
                 textbooks, lesson plans, curriculum, worksheets, or classroom
                 materials.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>What age groups can you teach?</h3>
+            <details class="question-card">
+              <summary>What age groups can you teach?</summary>
               <p>
                 Lesson support may be available for children, teenagers,
                 university students, adult learners, and business professionals,
                 depending on the lesson style and school requirements.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>Can inquiries be made in Japanese?</h3>
+            <details class="question-card">
+              <summary>Can inquiries be made in Japanese?</summary>
               <p>
                 Yes. Japanese email inquiries are welcome. For telephone
                 inquiries, please note that communication is conducted in
                 English.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>Can we contact you before we actually need support?</h3>
+            <details class="question-card">
+              <summary>
+                Can we contact you before we actually need support?
+              </summary>
               <p>
                 Absolutely. Schools often contact Foxjin / 狐ジン in advance so
                 they have a reliable teaching support option available if a
                 future absence, resignation, or staffing shortage occurs.
               </p>
-            </article>
+            </details>
 
-            <article class="feature-card">
-              <h3>What information should we include when contacting you?</h3>
+            <details class="question-card">
+              <summary>
+                What information should we include when contacting you?
+              </summary>
               <p>
                 Please include your school location, requested date and time,
                 student age group, lesson type, class length, materials
                 available, and whether the request is urgent or for future
                 planning.
               </p>
-            </article>
+            </details>
           </div>
         </div>
       </section>
+
+      <div class="fox-divider" aria-hidden="true"><span>導</span></div>
 
       <section class="content-section alt-section">
         <div class="section-inner">
@@ -235,6 +388,10 @@
             who to contact. Whether you need urgent lesson coverage,
             hiring-period support, or a backup teaching contact for the future,
             Foxjin / 狐ジン welcomes inquiries from schools.
+          </p>
+
+          <p class="fox-whisper">
+            The best time to find the path is before the forest gets dark.
           </p>
 
           <a href="contact-en.html" class="button primary-button">
