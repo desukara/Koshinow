@@ -93,6 +93,33 @@
         padding: 0.45rem;
       }
 
+      .line-qr-card {
+        text-align: center;
+      }
+
+      .line-qr-wrap {
+        width: min(260px, 100%);
+        margin: 1rem auto 0.9rem;
+        padding: 14px;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+        border: 1px solid rgba(23, 19, 15, 0.14);
+      }
+
+      .line-qr-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+
+      .line-contact-note {
+        margin-top: 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
       @media (min-width: 768px) {
         .email-modal-box {
           padding: 1.8rem;
@@ -140,14 +167,13 @@
           </button>
         </div>
 
-         <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
-          <a href="index.html" class="nav-link active" aria-current="page">
-            ホーム
-          </a>
+        <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+          <a href="index.html" class="nav-link">ホーム</a>
           <a href="profile.html" class="nav-link">プロフィール</a>
-          <a href="articles.html" class="nav-link">スクールメディア</a>
           <a href="questions.html" class="nav-link">よくあるご質問</a>
-          <a href="contact.html" class="nav-link">お問い合わせ</a>
+          <a href="contact.html" class="nav-link active" aria-current="page"
+            >お問い合わせ</a
+          >
         </nav>
       </div>
     </header>
@@ -221,6 +247,44 @@
         </div>
       </section>
 
+      <section class="content-section">
+        <div class="section-inner">
+          <p class="eyebrow">LINEでのお問い合わせ</p>
+
+          <h2>LINEでもお気軽にご相談いただけます。</h2>
+
+          <p>
+            講師の欠員対応、採用期間中のサポート、
+            体験レッスン、新規クラスの立ち上げ、
+            または将来に向けた事前相談など、
+            LINEからもお気軽にお問い合わせください。
+          </p>
+
+          <div class="card-grid">
+            <article class="feature-card contact-card line-qr-card">
+              <h3>Foxjin LINE</h3>
+
+              <div class="line-qr-wrap">
+                <img
+                  src="line-qr.jpg"
+                  alt="Foxjin LINE QRコード"
+                  class="line-qr-img"
+                />
+              </div>
+
+              <p class="contact-detail">
+                LINEアプリでQRコードを読み取ってください。
+              </p>
+
+              <p class="line-contact-note">
+                スマートフォンのLINEアプリからQRコードを読み取ると、
+                FoxjinへLINEでお問い合わせいただけます。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="content-section alt-section">
         <div class="section-inner">
           <p class="eyebrow">お電話でのお問い合わせ</p>
@@ -244,7 +308,6 @@
               </a>
             </article>
           </div>
-          
         </div>
       </section>
 
