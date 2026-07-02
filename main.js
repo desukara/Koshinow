@@ -35,13 +35,103 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.min(Math.max(number, min), max);
   }
 
+  function injectEnhancementStyles() {
+    if (document.getElementById("foxjin-js-enhancements")) return;
+
+    const style = document.createElement("style");
+    style.id = "foxjin-js-enhancements";
+
+    style.textContent = `
+      .js-progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        z-index: 2000;
+        pointer-events: none;
+        background: linear-gradient(90deg, var(--vermillion), var(--gold-bright), var(--jade-bright));
+        box-shadow: 0 0 14px rgba(255, 216, 107, 0.45);
+        transition: width 0.08s linear;
+      }
+
+      .site-header {
+        transition: box-shadow 0.24s ease, background 0.24s ease;
+      }
+
+      .site-header.js-header-active {
+        box-shadow: 0 12px 38px rgba(0, 0, 0, 0.36), 0 0 22px rgba(216, 173, 47, 0.12);
+      }
+
+      .js-reveal {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        transition-delay: var(--reveal-delay, 0ms);
+      }
+
+      .js-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .button,
+      .theme-toggle,
+      .menu-toggle {
+        position: relative;
+      }
+
+      .button {
+        will-change: transform;
+      }
+
+      .button.js-soft-press {
+        transform: translateY(1px) scale(0.99);
+      }
+
+      .js-nav-indicator {
+        position: fixed;
+        height: 3px;
+        width: 0;
+        border-radius: 999px;
+        z-index: 1600;
+        pointer-events: none;
+        opacity: 0;
+        background: linear-gradient(90deg, var(--gold-bright), var(--gold));
+        box-shadow: 0 0 12px rgba(255, 216, 107, 0.42);
+        transition: transform 0.24s ease, width 0.24s ease, opacity 0.24s ease;
+      }
+
+      .email-modal.active {
+        display: flex;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js-progress-bar,
+        .site-header,
+        .js-reveal,
+        .js-nav-indicator,
+        .button {
+          transition: none !important;
+          animation: none !important;
+          transform: none !important;
+        }
+
+        .js-reveal {
+          opacity: 1;
+        }
+      }
+    `;
+
+    document.head.appendChild(style);
+  }
+
   function openMenu() {
     if (!menuToggle || !siteNav) return;
 
     siteNav.classList.add("active");
     menuToggle.classList.add("active");
     menuToggle.setAttribute("aria-expanded", "true");
-    document.documentElement.classList.add("menu-is-open");
   }
 
   function closeMenu() {
@@ -50,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     siteNav.classList.remove("active");
     menuToggle.classList.remove("active");
     menuToggle.setAttribute("aria-expanded", "false");
-    document.documentElement.classList.remove("menu-is-open");
   }
 
   function toggleMenu() {
@@ -106,192 +195,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function injectEnhancementStyles() {
-    if (document.getElementById("foxjin-js-enhancements")) return;
+  function setupTheme() {
+    applyTheme(getStoredTheme());
 
-    const style = document.createElement("style");
-    style.id = "foxjin-js-enhancements";
+    if (!themeToggle) return;
 
-    style.textContent = `
-      .js-progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 4px;
-        z-index: 2000;
-        pointer-events: none;
-        background: linear-gradient(90deg, var(--vermillion), var(--gold-bright), var(--jade-bright));
-        box-shadow: 0 0 18px rgba(255, 216, 107, 0.65);
-        transition: width 0.08s linear;
+    themeToggle.addEventListener("click", () => {
+      const currentTheme =
+        document.documentElement.getAttribute("data-theme") || "dark";
+
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      applyTheme(newTheme);
+      storeTheme(newTheme);
+    });
+  }
+
+  function setupYear() {
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  }
+
+  function setupMenu() {
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener("click", toggleMenu);
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (!isDesktop()) {
+          closeMenu();
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+        closeEmailModal();
       }
+    });
 
-      .site-header {
-        transition: transform 0.34s ease, box-shadow 0.34s ease, background 0.34s ease;
+    document.addEventListener("click", (event) => {
+      if (!menuToggle || !siteNav || isDesktop()) return;
+
+      const clickedMenu = siteNav.contains(event.target);
+      const clickedButton = menuToggle.contains(event.target);
+
+      if (!clickedMenu && !clickedButton) {
+        closeMenu();
       }
+    });
 
-      .site-header.js-header-hidden {
-        transform: translateY(-105%);
-      }
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        if (isDesktop()) {
+          closeMenu();
+        }
 
-      .site-header.js-header-active {
-        box-shadow: 0 12px 42px rgba(0, 0, 0, 0.42), 0 0 28px rgba(216, 173, 47, 0.14);
-      }
-
-      .menu-is-open .site-header {
-        transform: translateY(0);
-      }
-
-      .js-reveal {
-        opacity: 0;
-        transform: translateY(26px) scale(0.985);
-        filter: blur(8px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease,
-          filter 0.8s ease;
-        transition-delay: var(--reveal-delay, 0ms);
-      }
-
-      .js-reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-      }
-
-      .button,
-      .theme-toggle,
-      .menu-toggle,
-      .lang-link,
-      .nav-link {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .button::after,
-      .theme-toggle::after,
-      .menu-toggle::after {
-        content: "";
-        position: absolute;
-        inset: -2px;
-        opacity: 0;
-        pointer-events: none;
-        background: radial-gradient(
-          circle at var(--glow-x, 50%) var(--glow-y, 50%),
-          rgba(255, 216, 107, 0.52),
-          transparent 34%
+        updateNavIndicator(
+          document.querySelector(".site-nav .nav-link.active")
         );
-        transition: opacity 0.25s ease;
-      }
-
-      .button:hover::after,
-      .theme-toggle:hover::after,
-      .menu-toggle:hover::after {
-        opacity: 1;
-      }
-
-      .js-nav-indicator {
-        position: fixed;
-        height: 3px;
-        width: 0;
-        border-radius: 999px;
-        z-index: 1600;
-        pointer-events: none;
-        opacity: 0;
-        background: linear-gradient(90deg, var(--gold-bright), var(--gold));
-        box-shadow: 0 0 14px rgba(255, 216, 107, 0.55);
-        transition:
-          transform 0.3s ease,
-          width 0.3s ease,
-          opacity 0.3s ease;
-      }
-
-      .js-particle-field {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        overflow: hidden;
-      }
-
-      .js-kami-particle {
-        position: absolute;
-        width: var(--particle-size, 5px);
-        height: var(--particle-size, 5px);
-        left: var(--particle-left, 50%);
-        top: 110%;
-        border-radius: 999px;
-        opacity: 0;
-        background: rgba(255, 216, 107, 0.62);
-        box-shadow: 0 0 14px rgba(255, 216, 107, 0.52);
-        animation: foxjinParticleFloat var(--particle-speed, 18s) linear infinite;
-        animation-delay: var(--particle-delay, 0s);
-      }
-
-      @keyframes foxjinParticleFloat {
-        0% {
-          opacity: 0;
-          transform: translate3d(0, 0, 0) scale(0.8);
-        }
-
-        12% {
-          opacity: 0.65;
-        }
-
-        70% {
-          opacity: 0.42;
-        }
-
-        100% {
-          opacity: 0;
-          transform: translate3d(var(--particle-drift, 30px), -125vh, 0) scale(1.2);
-        }
-      }
-
-      .js-page-fade {
-        opacity: 0;
-        transform: translateY(8px);
-        transition: opacity 0.38s ease, transform 0.38s ease;
-      }
-
-      .js-page-ready {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .js-page-exit {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .js-progress-bar,
-        .site-header,
-        .js-reveal,
-        .js-nav-indicator,
-        .js-page-fade,
-        .js-page-ready,
-        .js-page-exit {
-          transition: none !important;
-          animation: none !important;
-          transform: none !important;
-          filter: none !important;
-        }
-
-        .js-reveal {
-          opacity: 1;
-        }
-
-        .js-particle-field {
-          display: none;
-        }
-      }
-    `;
-
-    document.head.appendChild(style);
+      }, 120)
+    );
   }
 
   function createProgressBar() {
+    const existingBar = document.querySelector(".js-progress-bar");
+    if (existingBar) return existingBar;
+
     const bar = document.createElement("div");
     bar.className = "js-progress-bar";
     bar.setAttribute("aria-hidden", "true");
@@ -314,66 +288,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateHeaderState() {
     if (!siteHeader) return;
 
-    const currentScrollY = window.scrollY;
-    const scrollingDown = currentScrollY > lastScrollY;
-    const pastHero = currentScrollY > 180;
-
-    siteHeader.classList.toggle("js-header-active", currentScrollY > 20);
-
-    if (
-      scrollingDown &&
-      pastHero &&
-      !siteNav?.classList.contains("active") &&
-      !document.activeElement?.closest(".site-header")
-    ) {
-      siteHeader.classList.add("js-header-hidden");
-    } else {
-      siteHeader.classList.remove("js-header-hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  function updateActiveNav() {
-    const scrollPosition = window.scrollY + 150;
-    let activeLink = null;
-
-    sectionLinks.forEach((link) => {
-      const sectionId = link.getAttribute("href");
-      const section = sectionId ? document.querySelector(sectionId) : null;
-
-      if (!section) return;
-
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        activeLink = link;
-      }
-    });
-
-    if (window.scrollY < 80) {
-      activeLink =
-        document.querySelector('.site-nav .nav-link[href="index-en.html"]') ||
-        document.querySelector('.site-nav .nav-link[href="index.html"]') ||
-        navLinks[0];
-    }
-
-    if (activeLink) {
-      navLinks.forEach((navLink) => {
-        navLink.classList.toggle("active", navLink === activeLink);
-        if (navLink === activeLink) {
-          navLink.setAttribute("aria-current", "page");
-        } else {
-          navLink.removeAttribute("aria-current");
-        }
-      });
-
-      updateNavIndicator(activeLink);
-    }
+    siteHeader.classList.toggle("js-header-active", window.scrollY > 20);
+    lastScrollY = window.scrollY;
   }
 
   function createNavIndicator() {
+    const existingIndicator = document.querySelector(".js-nav-indicator");
+    if (existingIndicator) return existingIndicator;
+
     const indicator = document.createElement("div");
     indicator.className = "js-nav-indicator";
     indicator.setAttribute("aria-hidden", "true");
@@ -381,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return indicator;
   }
 
-  let navIndicator = null;
+  const navIndicator = createNavIndicator();
 
   function updateNavIndicator(activeLink) {
     if (!navIndicator || !activeLink || !isDesktop()) {
@@ -398,16 +320,63 @@ document.addEventListener("DOMContentLoaded", () => {
     navIndicator.style.opacity = "1";
   }
 
+  function updateActiveNav() {
+    const scrollPosition = window.scrollY + 150;
+    let activeLink = null;
+
+    sectionLinks.forEach((link) => {
+      const sectionId = link.getAttribute("href");
+      let section = null;
+
+      try {
+        section = sectionId ? document.querySelector(sectionId) : null;
+      } catch {
+        section = null;
+      }
+
+      if (!section) return;
+
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        activeLink = link;
+      }
+    });
+
+    if (!activeLink && window.scrollY < 80) {
+      activeLink =
+        document.querySelector('.site-nav .nav-link[aria-current="page"]') ||
+        document.querySelector(".site-nav .nav-link.active") ||
+        navLinks[0];
+    }
+
+    if (!activeLink) return;
+
+    navLinks.forEach((navLink) => {
+      const isActive = navLink === activeLink;
+      navLink.classList.toggle("active", isActive);
+
+      if (isActive) {
+        navLink.setAttribute("aria-current", "page");
+      } else {
+        navLink.removeAttribute("aria-current");
+      }
+    });
+
+    updateNavIndicator(activeLink);
+  }
+
   function setupRevealAnimations() {
     const revealTargets = document.querySelectorAll(
-      ".hero-content, .hero-visual, .content-section, .feature-card, .contact-cta-section"
+      ".hero-content, .hero-visual, .content-section, .feature-card"
     );
 
     revealTargets.forEach((element, index) => {
       element.classList.add("js-reveal");
       element.style.setProperty(
         "--reveal-delay",
-        `${Math.min(index * 55, 260)}ms`
+        `${Math.min(index * 35, 140)}ms`
       );
     });
 
@@ -426,60 +395,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.08,
+        rootMargin: "0px 0px -4% 0px",
       }
     );
 
     revealTargets.forEach((element) => observer.observe(element));
   }
 
-  function setupGlowTracking() {
-    const glowTargets = document.querySelectorAll(
-      ".button, .theme-toggle, .menu-toggle"
-    );
+  function setupButtonPressPolish() {
+    document.querySelectorAll(".button").forEach((button) => {
+      button.addEventListener("pointerdown", () => {
+        button.classList.add("js-soft-press");
+      });
 
-    glowTargets.forEach((element) => {
-      element.addEventListener("pointermove", (event) => {
-        const rect = element.getBoundingClientRect();
-        const x = ((event.clientX - rect.left) / rect.width) * 100;
-        const y = ((event.clientY - rect.top) / rect.height) * 100;
+      button.addEventListener("pointerup", () => {
+        button.classList.remove("js-soft-press");
+      });
 
-        element.style.setProperty("--glow-x", `${x}%`);
-        element.style.setProperty("--glow-y", `${y}%`);
+      button.addEventListener("pointerleave", () => {
+        button.classList.remove("js-soft-press");
+      });
+
+      button.addEventListener("blur", () => {
+        button.classList.remove("js-soft-press");
       });
     });
-  }
-
-  function setupParticles() {
-    if (prefersReducedMotion) return;
-
-    const particleField = document.createElement("div");
-    particleField.className = "js-particle-field";
-    particleField.setAttribute("aria-hidden", "true");
-
-    const particleCount = isDesktop() ? 28 : 14;
-
-    for (let index = 0; index < particleCount; index += 1) {
-      const particle = document.createElement("span");
-      particle.className = "js-kami-particle";
-
-      const size = Math.random() * 4 + 2;
-      const left = Math.random() * 100;
-      const drift = Math.random() * 90 - 45;
-      const speed = Math.random() * 12 + 14;
-      const delay = Math.random() * -24;
-
-      particle.style.setProperty("--particle-size", `${size}px`);
-      particle.style.setProperty("--particle-left", `${left}%`);
-      particle.style.setProperty("--particle-drift", `${drift}px`);
-      particle.style.setProperty("--particle-speed", `${speed}s`);
-      particle.style.setProperty("--particle-delay", `${delay}s`);
-
-      particleField.appendChild(particle);
-    }
-
-    document.body.prepend(particleField);
   }
 
   function setupSmoothAnchorScrolling() {
@@ -489,7 +430,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!href || href === "#") return;
 
-        const target = document.querySelector(href);
+        let target = null;
+
+        try {
+          target = document.querySelector(href);
+        } catch {
+          return;
+        }
 
         if (!target) return;
 
@@ -509,111 +456,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function setupPageTransitions() {
-    if (prefersReducedMotion) return;
+  function setupEmailModalSupport() {
+    const emailModal = document.getElementById("email-modal");
+    const emailModalClose = document.getElementById("email-modal-close");
+    const copyEmailBtn = document.getElementById("copy-email-btn");
 
-    document.body.classList.add("js-page-fade");
+    if (!emailModal) return;
 
-    requestAnimationFrame(() => {
-      document.body.classList.add("js-page-ready");
-    });
-
-    document.querySelectorAll("a[href]").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        const href = link.getAttribute("href");
-
-        if (
-          !href ||
-          href.startsWith("#") ||
-          href.startsWith("mailto:") ||
-          href.startsWith("tel:") ||
-          href.startsWith("http") ||
-          link.target === "_blank" ||
-          event.metaKey ||
-          event.ctrlKey ||
-          event.shiftKey ||
-          event.altKey
-        ) {
-          return;
-        }
-
-        event.preventDefault();
-        document.body.classList.add("js-page-exit");
-
-        setTimeout(() => {
-          window.location.href = href;
-        }, 220);
-      });
-    });
-  }
-
-  function setupKeyboardControls() {
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
-    });
-  }
-
-  function setupOutsideClickClose() {
     document.addEventListener("click", (event) => {
-      if (!menuToggle || !siteNav || isDesktop()) return;
+      const emailButton = event.target.closest(".email-choice-btn");
 
-      const clickedMenu = siteNav.contains(event.target);
-      const clickedButton = menuToggle.contains(event.target);
+      if (emailButton) {
+        event.preventDefault();
+        openEmailModal();
+        return;
+      }
 
-      if (!clickedMenu && !clickedButton) {
-        closeMenu();
+      if (event.target === emailModal) {
+        closeEmailModal();
       }
     });
-  }
 
-  function setupMenu() {
-    if (menuToggle && siteNav) {
-      menuToggle.addEventListener("click", toggleMenu);
+    if (emailModalClose) {
+      emailModalClose.addEventListener("click", closeEmailModal);
     }
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (!isDesktop()) {
-          closeMenu();
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("info@foxjin.com");
+          copyEmailBtn.textContent = "コピーしました";
+        } catch {
+          copyEmailBtn.textContent = "info@foxjin.com";
         }
-      });
-    });
-
-    window.addEventListener(
-      "resize",
-      debounce(() => {
-        if (isDesktop()) {
-          closeMenu();
-        }
-
-        const activeLink = document.querySelector(".site-nav .nav-link.active");
-        updateNavIndicator(activeLink);
-      }, 120)
-    );
-  }
-
-  function setupTheme() {
-    const savedTheme = getStoredTheme();
-    applyTheme(savedTheme);
-
-    if (themeToggle) {
-      themeToggle.addEventListener("click", () => {
-        const currentTheme =
-          document.documentElement.getAttribute("data-theme") || "dark";
-
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-        applyTheme(newTheme);
-        storeTheme(newTheme);
       });
     }
   }
 
-  function setupYear() {
-    if (year) {
-      year.textContent = new Date().getFullYear();
+  function openEmailModal() {
+    const emailModal = document.getElementById("email-modal");
+    if (!emailModal) return;
+
+    emailModal.classList.add("active");
+    emailModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeEmailModal() {
+    const emailModal = document.getElementById("email-modal");
+    const copyEmailBtn = document.getElementById("copy-email-btn");
+
+    if (!emailModal) return;
+
+    emailModal.classList.remove("active");
+    emailModal.setAttribute("aria-hidden", "true");
+
+    if (copyEmailBtn) {
+      copyEmailBtn.textContent = "メールアドレスをコピー";
     }
   }
 
@@ -670,38 +568,33 @@ document.addEventListener("DOMContentLoaded", () => {
       background:
         "linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep))",
       boxShadow:
-        "0 0 28px rgba(255, 216, 107, 0.75), 0 16px 40px rgba(0, 0, 0, 0.35)",
+        "0 0 24px rgba(255, 216, 107, 0.6), 0 16px 36px rgba(0, 0, 0, 0.28)",
     });
 
     document.body.appendChild(banner);
 
     setTimeout(() => {
-      banner.style.transition = "opacity 0.45s ease, transform 0.45s ease";
+      banner.style.transition = "opacity 0.35s ease";
       banner.style.opacity = "0";
-      banner.style.transform = "translateX(-50%) translateY(12px)";
-    }, 1600);
+    }, 1300);
 
     setTimeout(() => {
       banner.remove();
-    }, 2200);
+    }, 1750);
   }
+
+  injectEnhancementStyles();
 
   const progressBar = createProgressBar();
 
-  injectEnhancementStyles();
   setupTheme();
   setupYear();
   setupMenu();
-  setupKeyboardControls();
-  setupOutsideClickClose();
   setupRevealAnimations();
-  setupGlowTracking();
-  setupParticles();
+  setupButtonPressPolish();
   setupSmoothAnchorScrolling();
-  setupPageTransitions();
+  setupEmailModalSupport();
   setupKonamiFoxMode();
-
-  navIndicator = createNavIndicator();
 
   function onScrollFrame() {
     updateProgressBar(progressBar);
