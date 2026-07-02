@@ -1,0 +1,73 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+
+  "@id": "https://foxjin.com/#service",
+
+  "name": "Emergency English Teacher and Educational Staffing Services",
+
+  "description": "Foxjin provides emergency English teacher coverage, substitute teachers, staffing support, and continuity solutions for schools, eikaiwa, and educational institutions throughout Japan.",
+
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Foxjin",
+    "url": "https://foxjin.com",
+    "telephone": "+81-70-1567-2156",
+    "email": "info@foxjin.com"
+  },
+
+  "serviceType": [
+    "Emergency English Teacher Coverage",
+    "Substitute English Teachers",
+    "Eikaiwa Staffing Support",
+    "Teacher Continuity Services",
+    "Educational Staffing",
+    "School Operations Support",
+    "Emergency Classroom Coverage",
+    "Foreign Teacher Recruitment Support"
+  ],
+
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+
+  "availableLanguage": [
+    "English",
+    "Japanese"
+  ],
+
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "Eikaiwa Schools",
+      "Private Schools",
+      "International Schools",
+      "Educational Institutions",
+      "Language Schools"
+    ]
+  },
+
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ]
+  },
+
+  "providerMobility": "dynamic",
+
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "JPY"
+  },
+
+  "termsOfService": "https://foxjin.com/privacy.html"
+}
