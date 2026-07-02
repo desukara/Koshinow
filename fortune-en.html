@@ -13,6 +13,69 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
+
+    <style>
+      .kitsune-line {
+        margin: 0.35rem 0 1rem;
+        color: #7a3f00;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+      }
+
+      .fox-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 1.25rem 0 0.25rem;
+        opacity: 0.9;
+      }
+
+      .fox-divider span {
+        display: inline-grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(122, 63, 0, 0.45);
+        border-radius: 999px;
+        color: #7a3f00;
+        background: rgba(255, 250, 240, 0.9);
+        font-weight: 900;
+        box-shadow: 0 0 24px rgba(122, 63, 0, 0.16);
+      }
+
+      .fox-scroll,
+      .fox-whisper {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        color: #17130f;
+        border-left: 3px solid #7a3f00;
+        background: rgba(255, 250, 240, 0.92);
+        border-radius: 0 14px 14px 0;
+        font-weight: 800;
+        line-height: 1.65;
+      }
+
+      html[data-theme="dark"] .kitsune-line {
+        color: var(--gold-bright);
+        text-shadow: 0 0 18px rgba(214, 172, 86, 0.28);
+      }
+
+      html[data-theme="dark"] .fox-divider span {
+        color: var(--gold-bright);
+        background: rgba(23, 19, 15, 0.42);
+        border-color: rgba(214, 172, 86, 0.45);
+        box-shadow: 0 0 28px rgba(214, 172, 86, 0.18);
+      }
+
+      html[data-theme="dark"] .fox-scroll,
+      html[data-theme="dark"] .fox-whisper {
+        color: #17130f;
+        border-left-color: #7a3f00;
+        background: rgba(255, 250, 240, 0.92);
+      }
+    </style>
   </head>
 
   <body>
@@ -69,6 +132,10 @@
           <div class="hero-content">
             <p class="eyebrow">FOXJIN / 狐ジン</p>
 
+            <p class="kitsune-line">
+              The fox appears when the schedule changes unexpectedly.
+            </p>
+
             <h1>Your Classes Don’t Have To Stop.</h1>
 
             <p class="hero-text">
@@ -89,11 +156,13 @@
 
           <div class="hero-visual" aria-hidden="true">
             <div class="visual-card">
-              <span>支</span>
+              <span>狐</span>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="fox-divider" aria-hidden="true"><span>狐</span></div>
 
       <section class="content-section">
         <div class="section-inner">
@@ -119,8 +188,11 @@
 
       <section class="content-section">
         <div class="section-inner">
-          <p class="eyebrow">DOES THIS SOUND FAMILIAR?</p>
-          <h2>If this is your situation, Foxjin was built for you.</h2>
+          <p class="eyebrow">HAS THE FOX BEEN HERE BEFORE?</p>
+          <h2>
+            If these situations sound familiar, you are not the first school to
+            walk this path.
+          </h2>
 
           <div class="card-grid">
             <article class="info-card">
@@ -161,7 +233,13 @@
       <section class="content-section">
         <div class="section-inner">
           <p class="eyebrow">CLEAR AND SIMPLE</p>
-          <h2>What Foxjin is not.</h2>
+          <h2>Before you decide, you should know what Foxjin isn't.</h2>
+
+          <p class="fox-scroll">
+            Foxjin is not a dispatch company. It is not a recruiting agency. It
+            is not a platform. It is simply someone you can call when the path
+            ahead becomes unclear.
+          </p>
 
           <div class="card-grid">
             <article class="info-card">
@@ -198,6 +276,8 @@
           </div>
         </div>
       </section>
+
+      <div class="fox-divider" aria-hidden="true"><span>九</span></div>
 
       <section class="content-section" id="how-foxjin-helps">
         <div class="section-inner">
@@ -298,8 +378,8 @@
 
       <section class="content-section">
         <div class="section-inner">
-          <p class="eyebrow">LET’S TALK</p>
-          <h2>You do not have to figure it out alone.</h2>
+          <p class="eyebrow">THE FOX HAS ALREADY APPEARED</p>
+          <h2>You don't have to solve this problem alone.</h2>
           <p>
             Every school’s situation is different. Whether you need support
             today, expect to need support soon, or simply want to know what
@@ -308,6 +388,10 @@
           <p>
             No pressure. No membership fees. No long-term contracts. No
             obligation.
+          </p>
+
+          <p class="fox-whisper">
+            The hardest part is usually knowing who to call first.
           </p>
 
           <div class="hero-actions">
