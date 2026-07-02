@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://foxjin.com/#website",
+
+  "name": "Foxjin",
+  "alternateName": "Foxjin Japan",
+  "url": "https://foxjin.com",
+
+  "description": "Foxjin provides emergency English teacher coverage, substitute teachers, and school staffing support services for eikaiwa and schools in Japan.",
+
+  "publisher": {
+    "@id": "https://foxjin.com/#organization"
+  },
+
+  "inLanguage": [
+    "en",
+    "ja"
+  ],
+
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://foxjin.com/articles.html?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
