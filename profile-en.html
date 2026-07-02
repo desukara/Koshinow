@@ -24,11 +24,24 @@
       }
 
       .founder-photo-card {
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(122, 63, 0, 0.22);
         border-radius: 24px;
         padding: 1rem;
-        background: rgba(255, 255, 255, 0.04);
-        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+        background: rgba(255, 250, 240, 0.72);
+        box-shadow: 0 24px 60px rgba(122, 63, 0, 0.12);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .founder-photo-card::before {
+        content: "狐";
+        position: absolute;
+        right: 1rem;
+        top: 0.65rem;
+        font-size: 2rem;
+        font-weight: 900;
+        color: rgba(122, 63, 0, 0.2);
+        pointer-events: none;
       }
 
       .founder-photo {
@@ -37,6 +50,8 @@
         height: auto;
         border-radius: 18px;
         object-fit: cover;
+        position: relative;
+        z-index: 1;
       }
 
       .founder-caption {
@@ -44,6 +59,42 @@
         font-size: 0.95rem;
         opacity: 0.86;
         line-height: 1.5;
+        position: relative;
+        z-index: 1;
+      }
+
+      .kitsune-line,
+      .fox-whisper {
+        color: #7a3f00;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+      }
+
+      .kitsune-line {
+        margin: 0.35rem 0 1rem;
+      }
+
+      .fox-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 1.25rem 0 0.25rem;
+        opacity: 0.9;
+      }
+
+      .fox-divider span {
+        display: inline-grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(122, 63, 0, 0.45);
+        border-radius: 999px;
+        color: #7a3f00;
+        background: rgba(255, 250, 240, 0.9);
+        font-weight: 900;
+        box-shadow: 0 0 24px rgba(122, 63, 0, 0.16);
       }
 
       .trust-list {
@@ -65,15 +116,60 @@
         left: 0;
         top: 0;
         font-size: 0.8rem;
-        opacity: 0.75;
+        color: #7a3f00;
+        opacity: 0.9;
       }
 
-      .founder-note {
+      .founder-note,
+      .fox-origin-note {
         margin-top: 1.25rem;
         padding: 1rem;
-        border-left: 3px solid currentColor;
-        background: rgba(255, 255, 255, 0.05);
+        color: #17130f;
+        border-left: 3px solid #7a3f00;
+        background: rgba(255, 250, 240, 0.92);
         border-radius: 0 14px 14px 0;
+      }
+
+      .fox-origin-note strong {
+        color: #7a3f00;
+      }
+
+      html[data-theme="dark"] .founder-photo-card {
+        border-color: rgba(214, 172, 86, 0.32);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+      }
+
+      html[data-theme="dark"] .founder-photo-card::before {
+        color: rgba(214, 172, 86, 0.2);
+      }
+
+      html[data-theme="dark"] .kitsune-line,
+      html[data-theme="dark"] .fox-whisper {
+        color: var(--gold-bright);
+        text-shadow: 0 0 18px rgba(214, 172, 86, 0.28);
+      }
+
+      html[data-theme="dark"] .fox-divider span {
+        color: var(--gold-bright);
+        background: rgba(23, 19, 15, 0.42);
+        border-color: rgba(214, 172, 86, 0.45);
+        box-shadow: 0 0 28px rgba(214, 172, 86, 0.18);
+      }
+
+      html[data-theme="dark"] .trust-list li::before {
+        color: var(--gold-bright);
+      }
+
+      html[data-theme="dark"] .founder-note,
+      html[data-theme="dark"] .fox-origin-note {
+        color: #17130f;
+        border-left-color: #7a3f00;
+        background: rgba(255, 250, 240, 0.92);
+      }
+
+      html[data-theme="dark"] .fox-origin-note strong {
+        color: #7a3f00;
       }
 
       @media (max-width: 760px) {
@@ -143,14 +239,17 @@
           <div class="hero-content">
             <p class="eyebrow">Profile</p>
 
-            <h1>Good schools deserve time to make good decisions.</h1>
+            <p class="kitsune-line">The fox appears at the edge of the problem.</p>
+
+            <h1>The person behind the fox.</h1>
 
             <p class="hero-text">
               Foxjin / 狐ジン was created by James Simmons to help English
-              schools protect their classrooms during staffing gaps, teacher
-              absences, hiring transitions, and sudden schedule changes. When
-              the pressure rises, students still need consistency, parents still
-              expect trust, and school owners still need room to think clearly.
+              schools protect their classrooms when the schedule shifts.
+              Teacher absences, hiring transitions, sudden changes, and busy
+              seasons all create pressure. Foxjin exists to bring calm movement
+              back into the day: one teacher, clear communication, and classes
+              that keep going.
             </p>
 
             <div class="hero-actions">
@@ -171,9 +270,11 @@
         </div>
       </section>
 
+      <div class="fox-divider" aria-hidden="true"><span>狐</span></div>
+
       <section class="content-section">
         <div class="section-inner">
-          <p class="eyebrow">Meet the Founder</p>
+          <p class="eyebrow">Origin Story</p>
 
           <h2>James Simmons, Founder of Foxjin / 狐ジン</h2>
 
@@ -190,7 +291,8 @@
             </figure>
 
             <article class="feature-card">
-              <h3>Founder Profile</h3>
+              <h3>The Person Behind the Fox</h3>
+
               <p>
                 <strong>James Simmons</strong> is the founder of Foxjin /
                 狐ジン, an experienced instructor, published author, and
@@ -200,32 +302,40 @@
                 right long-term staffing decision.
               </p>
 
+              <p>
+                Foxjin is not a faceless dispatch system. It is direct support
+                from a teacher schools can speak with before lessons begin.
+                That matters when the schedule is already moving, parents are
+                expecting consistency, and the classroom still needs to feel
+                steady.
+              </p>
+
+              <div class="fox-origin-note">
+                <strong>Foxjin appears when the path gets unclear.</strong>
+                The goal is not to take over your school. The goal is to help
+                the day continue while you make the right long-term decision.
+              </div>
+
               <ul class="trust-list">
-                <li>Academic experience at Harvard University</li>
+                <li>Direct communication before support begins</li>
+                <li>Native English teaching experience in Japanese education settings</li>
                 <li>United States Army instructional background</li>
-                <li>
-                  Published author of four books available through major
-                  retailers
-                </li>
-                <li>
-                  Experience working across multiple cultures and age groups
-                </li>
-                <li>Special strength in meeting people where they are</li>
-                <li>Founder-led teaching support for schools in Japan</li>
+                <li>Academic experience at Harvard University</li>
+                <li>Published author of four books available through major retailers</li>
               </ul>
 
               <p class="founder-note">
-                James's greatest strength is connecting with people on their
-                level. Whether working with children, teenagers, adult learners,
-                business professionals, school owners, or families from
-                different cultural backgrounds, his approach is built on
-                respect, clear communication, and helping people feel
-                understood.
+                Good schools do not need panic. They need a steady person who
+                can understand the situation, respect the classroom, and help
+                the schedule keep moving.
               </p>
+            </article>
             </article>
           </div>
         </div>
       </section>
+
+      <div class="fox-divider" aria-hidden="true"><span>導</span></div>
 
       <section class="content-section alt-section">
         <div class="section-inner">
@@ -278,6 +388,8 @@
           </p>
         </div>
       </section>
+
+      <div class="fox-divider" aria-hidden="true"><span>狐</span></div>
 
       <section class="content-section">
         <div class="section-inner">
