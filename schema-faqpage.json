@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you provide emergency substitute English teachers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Foxjin provides emergency English teacher coverage and substitute teachers for schools and eikaiwa throughout Japan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you provide a substitute teacher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Response times depend on location and availability, but Foxjin prioritizes rapid emergency staffing support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with eikaiwa schools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Foxjin supports eikaiwa schools, private schools, language programs, and educational institutions throughout Japan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide long-term teacher coverage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Foxjin can provide both short-term emergency coverage and longer-term staffing solutions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide services throughout Japan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Foxjin provides educational staffing support services throughout Japan."
+      }
+    }
+  ]
+}
