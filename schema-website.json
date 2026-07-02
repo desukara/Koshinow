@@ -16,11 +16,5 @@
   "inLanguage": [
     "en",
     "ja"
-  ],
-
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://foxjin.com/articles.html?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  ]
 }
