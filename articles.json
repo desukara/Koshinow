@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "teacher-called-in-sick",
+    "title": "Teacher Called In Sick",
+    "language": "en",
+    "page": "teacher-called-in-sick.html",
+    "image": "teacher-called-in-sick.png",
+    "category": "Emergency Coverage"
+  },
+  {
+    "slug": "teacher-called-in-sick",
+    "title": "先生が病欠した場合",
+    "language": "ja",
+    "page": "teacher-called-in-sick-en.html",
+    "image": "teacher-called-in-sick.png",
+    "category": "Emergency Coverage"
+  },
+
+  {
+    "slug": "backup-teachers-eikaiwa",
+    "title": "Backup Teachers for Eikaiwa",
+    "language": "en",
+    "page": "backup-teachers-eikaiwa.html",
+    "image": "backup-teachers-eikaiwa.png",
+    "category": "Eikaiwa"
+  },
+  {
+    "slug": "backup-teachers-eikaiwa",
+    "title": "英会話スクールの代替講師",
+    "language": "ja",
+    "page": "backup-teachers-eikaiwa-en.html",
+    "image": "backup-teachers-eikaiwa.png",
+    "category": "Eikaiwa"
+  },
+
+  {
+    "slug": "how-schools-handle-staff-shortages",
+    "title": "How Schools Handle Staff Shortages",
+    "language": "en",
+    "page": "how-schools-handle-staff-shortages.html",
+    "image": "how-schools-handle-staff-shortages.png",
+    "category": "School Operations"
+  },
+  {
+    "slug": "how-schools-handle-staff-shortages",
+    "title": "学校が人手不足に対応する方法",
+    "language": "ja",
+    "page": "how-schools-handle-staff-shortages-en.html",
+    "image": "how-schools-handle-staff-shortages.png",
+    "category": "School Operations"
+  },
+
+  {
+    "slug": "how-schools-prepare-teacher-absences",
+    "title": "How Schools Prepare for Teacher Absences",
+    "language": "en",
+    "page": "how-schools-prepare-teacher-absences.html",
+    "image": "how-schools-prepare-teacher-absences.png",
+    "category": "Teacher Continuity"
+  },
+  {
+    "slug": "how-schools-prepare-teacher-absences",
+    "title": "学校が教師の欠勤に備える方法",
+    "language": "ja",
+    "page": "how-schools-prepare-teacher-absences-en.html",
+    "image": "how-schools-prepare-teacher-absences.png",
+    "category": "Teacher Continuity"
+  },
+
+  {
+    "slug": "english-teacher-turnover-cost",
+    "title": "The Cost of English Teacher Turnover",
+    "language": "en",
+    "page": "english-teacher-turnover-cost.html",
+    "image": "english-teacher-turnover-cost.png",
+    "category": "Recruitment"
+  },
+  {
+    "slug": "english-teacher-turnover-cost",
+    "title": "英語教師の離職コスト",
+    "language": "ja",
+    "page": "english-teacher-turnover-cost-en.html",
+    "image": "english-teacher-turnover-cost.png",
+    "category": "Recruitment"
+  },
+
+  {
+    "slug": "emergency-classroom-coverage",
+    "title": "Emergency Classroom Coverage",
+    "language": "en",
+    "page": "emergency-classroom-coverage.html",
+    "image": "emergency-classroom-coverage.png",
+    "category": "Emergency Coverage"
+  },
+  {
+    "slug": "emergency-classroom-coverage",
+    "title": "緊急授業代行",
+    "language": "ja",
+    "page": "emergency-classroom-coverage-en.html",
+    "image": "emergency-classroom-coverage.png",
+    "category": "Emergency Coverage"
+  },
+
+  {
+    "slug": "eikaiwa-school-operations",
+    "title": "Eikaiwa School Operations",
+    "language": "en",
+    "page": "eikaiwa-school-operations.html",
+    "image": "eikaiwa-school-operations.png",
+    "category": "Operations"
+  },
+  {
+    "slug": "eikaiwa-school-operations",
+    "title": "英会話スクール運営",
+    "language": "ja",
+    "page": "eikaiwa-school-operations-en.html",
+    "image": "eikaiwa-school-operations.png",
+    "category": "Operations"
+  },
+
+  {
+    "slug": "hiring-foreign-teachers-japan",
+    "title": "Hiring Foreign Teachers in Japan",
+    "language": "en",
+    "page": "hiring-foreign-teachers-japan.html",
+    "image": "hiring-foreign-teachers-japan.png",
+    "category": "Recruitment"
+  },
+  {
+    "slug": "hiring-foreign-teachers-japan",
+    "title": "日本で外国人教師を採用する",
+    "language": "ja",
+    "page": "hiring-foreign-teachers-japan-en.html",
+    "image": "hiring-foreign-teachers-japan.png",
+    "category": "Recruitment"
+  },
+
+  {
+    "slug": "need-substitute-teacher",
+    "title": "Need a Substitute Teacher?",
+    "language": "en",
+    "page": "need-substitute-teacher.html",
+    "image": "need-substitute-teacher.png",
+    "category": "Emergency Coverage"
+  },
+  {
+    "slug": "need-substitute-teacher",
+    "title": "代替教師が必要ですか？",
+    "language": "ja",
+    "page": "need-substitute-teacher-en.html",
+    "image": "need-substitute-teacher.png",
+    "category": "Emergency Coverage"
+  }
+]
