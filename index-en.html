@@ -30,9 +30,14 @@
 
       .fox-whisper {
         margin-top: 1.25rem;
+        padding: 1rem;
+        color: #17130f;
+        border-left: 3px solid #7a3f00;
+        background: rgba(255, 250, 240, 0.92);
+        border-radius: 0 14px 14px 0;
         font-weight: 800;
-        color: #7a3f00;
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+        line-height: 1.65;
+        text-shadow: none;
       }
 
       .fox-divider {
@@ -57,10 +62,16 @@
         box-shadow: 0 0 24px rgba(122, 63, 0, 0.16);
       }
 
-      html[data-theme="dark"] .foxjin-invocation,
-      html[data-theme="dark"] .fox-whisper {
+      html[data-theme="dark"] .foxjin-invocation {
         color: var(--gold-bright);
         text-shadow: 0 0 18px rgba(214, 172, 86, 0.28);
+      }
+
+      html[data-theme="dark"] .fox-whisper {
+        color: #17130f;
+        border-left-color: #7a3f00;
+        background: rgba(255, 250, 240, 0.92);
+        text-shadow: none;
       }
 
       html[data-theme="dark"] .fox-divider span {
