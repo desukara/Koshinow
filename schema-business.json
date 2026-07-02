@@ -1,0 +1,57 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://foxjin.com/#organization",
+
+  "name": "Foxjin",
+  "url": "https://foxjin.com",
+
+  "logo": "https://foxjin.com/fox-logo-512.png",
+  "image": "https://foxjin.com/fox-logo-512.png",
+
+  "description": "Foxjin provides emergency English teacher coverage, substitute teachers, and educational staffing support services for schools and eikaiwa throughout Japan.",
+
+  "telephone": "+81-70-1567-2156",
+  "email": "info@foxjin.com",
+
+  "founder": {
+    "@type": "Person",
+    "name": "James P Simmons"
+  },
+
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "JP"
+  },
+
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+
+  "serviceType": [
+    "Emergency English Teacher Coverage",
+    "Substitute English Teachers",
+    "Eikaiwa Staffing Support",
+    "School Operations Support",
+    "Teacher Continuity Services"
+  ],
+
+  "sameAs": [
+    "https://line.me"
+  ],
+
+  "knowsAbout": [
+    "English Education",
+    "Eikaiwa Schools",
+    "Emergency Staffing",
+    "Foreign Teacher Recruitment",
+    "Substitute Teachers",
+    "School Operations"
+  ],
+
+  "inLanguage": [
+    "en",
+    "ja"
+  ]
+}
